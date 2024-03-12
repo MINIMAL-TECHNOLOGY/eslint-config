@@ -1,0 +1,27 @@
+{
+  "name": "be-config",
+  "version": "1.0.0",
+  "description": "ESLint configuration for TypeScript backend projects",
+  "main": ".eslintrc.cjs",
+  "keywords": [
+    "eslint-config",
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "backend"
+  ],
+  "author": "Minimal Technology developers",
+  "license": "ISC",
+  "dependencies": {
+    "@loopback/eslint-config": "^15.0.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0",
+    "prettier": ">=3.0.0",
+    "typescript": "^5.0.0"
+  }
+}

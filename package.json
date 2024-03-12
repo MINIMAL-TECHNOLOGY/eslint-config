@@ -1,0 +1,13 @@
+{
+  "name": "mt-eslint",
+  "version": "1.0.0",
+  "description": "ESLint configuration for Minimal Technology projects",
+  "keywords": [
+    "eslint-config",
+    "eslint",
+    "eslintconfig",
+    "typescript"
+  ],
+  "author": "Minimal Technology developers",
+  "license": "ISC"
+}

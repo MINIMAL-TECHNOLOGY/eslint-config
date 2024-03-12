@@ -21,8 +21,8 @@ You can install them using the following command:
 
 ```bash
 pnpm add -D \
-  eslint@>=8.0.0 \
-  prettier@>=3.0.0 \
+  eslint@>"=8.0.0" \
+  prettier@">=3.0.0" \
   typescript@^5.0.0 \
   @loopback/eslint-config@^15.0.0 \
   eslint-config-standard-with-typescript@^43.0.1 \
@@ -35,8 +35,8 @@ pnpm add -D \
 
 ```bash
 pnpm add -D \
-  eslint@>=8.0.0 \
-  prettier@>=3.0.0 \
+  eslint@>"=8.0.0" \
+  prettier@">=3.0.0" \
   typescript@^5.0.0 \
   @typescript-eslint/eslint-plugin@^6.4.0 \
   eslint-config-prettier@^9.1.0 \

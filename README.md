@@ -23,7 +23,7 @@ You can install them using the following command:
 pnpm add -D \
   @loopback/eslint-config@^15.0.0 \
   eslint-config-standard-with-typescript@^43.0.1 \
-  eslint-plugin-import^2.25.2 \
+  eslint-plugin-import@^2.25.2 \
   eslint-plugin-n@^15.0.0 \
   eslint-plugin-promise@^6.0.0
 ```

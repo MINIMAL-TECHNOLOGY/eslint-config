@@ -52,4 +52,5 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     semi: "off",
   },
+  settings: { react: { version: "detect" } },
 };

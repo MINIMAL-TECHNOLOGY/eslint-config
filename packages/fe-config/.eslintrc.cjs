@@ -3,7 +3,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "standard-with-typescript",
+    "love",
     "plugin:react/recommended",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -34,6 +34,11 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-shadow": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { selector: "interface", format: ["PascalCase"], prefix: ["I"] },
+    ],
+    curly: ["error", "all"],
     "no-debugger": "off",
     "no-shadow": "off",
     "no-undef": "off",

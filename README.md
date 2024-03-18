@@ -22,10 +22,11 @@ You can install them using the following command:
 ```bash
 pnpm add -D \
   @loopback/eslint-config@^15.0.0 \
-  eslint-config-standard-with-typescript@^43.0.1 \
   eslint-plugin-import@^2.25.2 \
   eslint-plugin-n@^15.0.0 \
-  eslint-plugin-promise@^6.0.0
+  eslint-plugin-promise@^6.0.0 \
+  @typescript-eslint/eslint-plugin@^6.4.0 \
+  eslint-config-love@latest
 ```
 
 - For frontend:
@@ -34,7 +35,8 @@ pnpm add -D \
 pnpm add -D \
   @typescript-eslint/eslint-plugin@^6.4.0 \
   eslint-config-prettier@^9.1.0 \
-  eslint-config-standard-with-typescript@^43.0.1 \
+  eslint-plugin-prettier@^5.1.3 \
+  eslint-config-love@latest \
   eslint-plugin-import@^2.25.2 \
   eslint-plugin-n@^15.0.0 \
   eslint-plugin-promise@^6.0.0 \

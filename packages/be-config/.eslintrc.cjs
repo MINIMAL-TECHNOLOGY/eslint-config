@@ -39,6 +39,9 @@ module.exports = {
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-extraneous-class": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
 
     // WARN
     "@typescript-eslint/no-explicit-any": "warn",

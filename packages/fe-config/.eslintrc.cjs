@@ -29,6 +29,8 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "react-refresh"],
   rules: {
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-explicit-any": "off",

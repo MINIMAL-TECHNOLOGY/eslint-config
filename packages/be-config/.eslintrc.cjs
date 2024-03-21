@@ -34,6 +34,8 @@ module.exports = {
     ],
 
     // OFF
+    "@typescript-eslint/return-await": "off",
+    "prefer-promise-reject-errors": "off",
     "@typescript-eslint/no-extraneous-class": "off",
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/no-constant-condition": "off",
@@ -50,6 +52,18 @@ module.exports = {
 
     // ERROR
     "@typescript-eslint/return-await": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        paths: [
+          {
+            name: "lodash",
+            message:
+              "Please import 'nameFunc' from 'lodash/nameFunc' instead of lodash",
+          },
+        ],
+      },
+    ],
     "@typescript-eslint/no-unused-vars": [
       "error",
       {

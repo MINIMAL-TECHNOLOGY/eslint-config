@@ -12,6 +12,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:storybook/recommended",
   ],
+  ignorePatterns: ["build", ".eslintrc.cjs", "*.d.ts"],
   overrides: [
     {
       env: {
@@ -29,6 +30,8 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "react-refresh"],
   rules: {
+    "@typescript-eslint/return-await": "off",
+    "prefer-promise-reject-errors": "off",
     "@typescript-eslint/no-extraneous-class": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -53,6 +56,28 @@ module.exports = {
     ],
     "react/jsx-boolean-value": "error",
     "react/react-in-jsx-scope": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        paths: [
+          {
+            name: "lodash",
+            message:
+              "Please import 'nameFunc' from 'lodash/nameFunc' instead of lodash",
+          },
+        ],
+      },
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { selector: "interface", format: ["PascalCase"], prefix: ["I"] },
+      {
+        selector: "typeAlias",
+        format: ["PascalCase"],
+        prefix: ["T"],
+        filter: { regex: "^(RootState|AppDispatch)$", match: false },
+      },
+    ],
     semi: "off",
   },
   settings: { react: { version: "detect" } },

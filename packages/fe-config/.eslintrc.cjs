@@ -30,6 +30,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "react-refresh"],
   rules: {
+    "@typescript-eslint/no-confusing-void-expression": "off",
     "@typescript-eslint/return-await": "off",
     "prefer-promise-reject-errors": "off",
     "@typescript-eslint/no-extraneous-class": "off",

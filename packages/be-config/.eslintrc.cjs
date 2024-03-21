@@ -34,6 +34,7 @@ module.exports = {
     ],
 
     // OFF
+    "@typescript-eslint/no-extraneous-class": "off",
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/no-constant-condition": "off",
     "@typescript-eslint/no-misused-promises": "off",

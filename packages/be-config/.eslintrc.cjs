@@ -34,6 +34,7 @@ module.exports = {
     ],
 
     // OFF
+    "@typescript-eslint/no-invalid-void-type": "off",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/no-confusing-void-expression": "off",
     "@typescript-eslint/return-await": "off",

@@ -24,7 +24,6 @@ module.exports = {
     curly: ["error", "all"],
     "no-constant-condition": "off",
     "no-unused-vars": "off",
-    "no-return-await": "off",
     "prefer-const": [
       "error",
       {

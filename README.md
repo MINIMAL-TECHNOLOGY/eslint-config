@@ -25,7 +25,7 @@ pnpm add -D \
   prettier@">=3.0.0" \
   typescript@^5.0.0 \
   @loopback/eslint-config@^15.0.0 \
-  eslint-plugin-prettier@^^5.1.3 \
+  eslint-plugin-prettier@^5.1.3 \
   eslint-plugin-import@^2.25.2 \
   eslint-plugin-n@^15.0.0 \
   eslint-plugin-promise@^6.0.0 \

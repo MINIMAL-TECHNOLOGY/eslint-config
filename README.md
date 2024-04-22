@@ -7,7 +7,7 @@ This repository contains the shared ESLint configuration used by the Minimal Tec
 First of all, ensure that Node.js and pnpm are installed in your system. Then, run the following command to install the package:
 
 ```
-pnpm add @mt/eslint@github:vietanhvo/mt-eslint.git --save-dev
+pnpm add @mt/eslint@github:MINIMAL-TECHNOLOGY/mt-eslint.git --save-dev
 ```
 
 This command installs this package as a devDependency in your project.
@@ -25,6 +25,7 @@ pnpm add -D \
   prettier@">=3.0.0" \
   typescript@^5.0.0 \
   @loopback/eslint-config@^15.0.0 \
+  eslint-plugin-prettier@^^5.1.3 \
   eslint-plugin-import@^2.25.2 \
   eslint-plugin-n@^15.0.0 \
   eslint-plugin-promise@^6.0.0 \

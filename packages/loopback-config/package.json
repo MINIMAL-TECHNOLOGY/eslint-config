@@ -1,0 +1,39 @@
+{
+  "name": "loopback-config",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "eslint.config.js",
+  "exports": {
+    ".": {
+      "default": "./eslint.config.js",
+      "types": "./eslint.config.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "eslint.config.d.ts",
+  "description": "ESLint configuration for TypeScript Loopback 4 projects",
+  "keywords": [
+    "eslint-config",
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "loopback"
+  ],
+  "author": "Minimal Technology developers",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "8.57.0",
+    "common": "workspace:*",
+    "@eslint/compat": "^1.0.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@loopback/eslint-config": "15.0.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-eslint-plugin": "^6.1.0",
+    "eslint-plugin-mocha": "^10.4.3"
+  }
+}

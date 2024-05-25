@@ -3,6 +3,7 @@
     "strict": true
   },
   "include": [
-    "./.eslintrc.cjs"
+    "eslint.config.js",
+    "eslint.config.d.ts"
   ]
 }

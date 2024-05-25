@@ -1,0 +1,31 @@
+{
+  "name": "react-config",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "ESLint configuration for TypeScript React projects",
+  "main": "eslint.config.js",
+  "exports": {
+    ".": {
+      "default": "./eslint.config.js",
+      "types": "./eslint.config.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "eslint.config.d.ts",
+  "keywords": [
+    "eslint-config",
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "react"
+  ],
+  "author": "Minimal Technology developers",
+  "license": "ISC",
+  "dependencies": {
+    "common": "workspace:*",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-storybook": "^0.8.0"
+  }
+}

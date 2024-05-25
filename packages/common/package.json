@@ -1,0 +1,35 @@
+{
+  "name": "common",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "eslint.config.js",
+  "exports": {
+    ".": {
+      "default": "./eslint.config.js",
+      "types": "./eslint.config.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "eslint.config.d.ts",
+  "description": "Common ESLint configuration for TypeScript projects",
+  "keywords": [
+    "eslint-config",
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "common"
+  ],
+  "author": "Minimal Technology developers",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "8.57.0",
+    "eslint-config-love": "^48.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "prettier": "3.2.5",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.56.10"
+  }
+}

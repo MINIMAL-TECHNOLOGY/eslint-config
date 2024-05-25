@@ -10,6 +10,9 @@
     "typescript",
     "loopback"
   ],
+  "exports": {
+    "import": "./index.js"
+  },
   "author": "Minimal Technology developers",
   "license": "ISC",
   "dependencies": {
@@ -24,5 +27,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-eslint-plugin": "^6.1.0",
     "eslint-plugin-mocha": "^10.4.3"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.57.0"
   }
 }

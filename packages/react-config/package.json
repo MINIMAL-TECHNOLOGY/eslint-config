@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "ESLint configuration for TypeScript React projects",
   "main": "index.js",
+  "exports": {
+    "import": "./index.js"
+  },
   "keywords": [
     "eslint-config",
     "eslint",
@@ -18,5 +21,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.8.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.57.0"
   }
 }

@@ -2,7 +2,7 @@
   "name": "@minimaltech/eslint-config-loopback",
   "type": "module",
   "version": "1.0.0",
-  "main": "dist/bundle.js",
+  "main": "eslint.config.js",
   "exports": {
     ".": {
       "default": "./eslint.config.js",
@@ -25,7 +25,6 @@
   "author": "Minimal Technology developers",
   "license": "ISC",
   "dependencies": {
-    "@minimaltech/eslint-config-common": "workspace:*",
     "@eslint/compat": "^1.0.1",
     "@eslint/eslintrc": "^3.1.0",
     "@loopback/eslint-config": "15.0.2"

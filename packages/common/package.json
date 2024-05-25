@@ -2,7 +2,7 @@
   "name": "@minimaltech/eslint-config-common",
   "type": "module",
   "version": "1.0.0",
-  "main": "dist/bundle.js",
+  "main": "eslint.config.js",
   "exports": {
     ".": {
       "default": "./eslint.config.js",

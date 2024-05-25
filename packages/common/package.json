@@ -1,19 +1,7 @@
 {
   "name": "@minimaltech/eslint-config-common",
-  "type": "module",
   "version": "1.0.0",
-  "main": "eslint.config.js",
-  "exports": {
-    ".": {
-      "default": "./eslint.config.js",
-      "types": "./eslint.config.d.ts"
-    },
-    "./package.json": "./package.json"
-  },
-  "scripts": {
-    "build": "rollup -c"
-  },
-  "types": "eslint.config.d.ts",
+  "main": "index.js",
   "description": "Common ESLint configuration for TypeScript projects",
   "keywords": [
     "eslint-config",
@@ -29,8 +17,7 @@
     "eslint-config-love": "^48.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "5.1.3",
-    "prettier": "3.2.5",
-    "typescript": "^5.0.0"
+    "prettier": "3.2.5"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.10"

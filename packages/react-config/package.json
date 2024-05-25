@@ -3,18 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "description": "ESLint configuration for TypeScript React projects",
-  "main": "eslint.config.js",
-  "scripts": {
-    "build": "rollup -c"
-  },
-  "exports": {
-    ".": {
-      "default": "./eslint.config.js",
-      "types": "./eslint.config.d.ts"
-    },
-    "./package.json": "./package.json"
-  },
-  "types": "eslint.config.d.ts",
+  "main": "index.js",
   "keywords": [
     "eslint-config",
     "eslint",

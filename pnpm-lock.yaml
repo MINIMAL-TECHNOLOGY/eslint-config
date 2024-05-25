@@ -63,6 +63,9 @@ importers:
 
   packages/react-config:
     dependencies:
+      eslint:
+        specifier: '>=8.57.0'
+        version: 8.57.0
       eslint-plugin-react:
         specifier: ^7.34.0
         version: 7.34.0(eslint@8.57.0)
@@ -75,6 +78,9 @@ importers:
       eslint-plugin-storybook:
         specifier: ^0.8.0
         version: 0.8.0(eslint@8.57.0)(typescript@5.4.2)
+      typescript-eslint:
+        specifier: ^7.10.0
+        version: 7.10.0(eslint@8.57.0)(typescript@5.4.2)
 
 packages:
 

@@ -1,4 +1,5 @@
 import { FlatCompat } from "@eslint/eslintrc";
+import { plugin as tseslint } from "typescript-eslint";
 import commonPlugin from "../common/index.js";
 import reactRefresh from "eslint-plugin-react-refresh";
 import reactPlugin from "eslint-plugin-react/configs/recommended.js";
@@ -35,6 +36,9 @@ export default [
     },
   },
   {
+    plugins: {
+      "@typescript-eslint": tseslint,
+    },
     rules: {
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/no-empty-function": "off",

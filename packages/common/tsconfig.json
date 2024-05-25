@@ -1,6 +1,5 @@
 {
   "include": [
-    "./eslint.config.d.ts",
-    "./eslint.config.js"
+    "./*"
   ]
 }

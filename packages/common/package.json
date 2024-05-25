@@ -1,13 +1,17 @@
-{ "name": "common",
+{
+  "name": "@minimaltech/eslint-config-common",
   "type": "module",
   "version": "1.0.0",
-  "main": "eslint.config.js",
+  "main": "dist/bundle.js",
   "exports": {
     ".": {
       "default": "./eslint.config.js",
       "types": "./eslint.config.d.ts"
     },
     "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "rollup -c"
   },
   "types": "eslint.config.d.ts",
   "description": "Common ESLint configuration for TypeScript projects",

@@ -1,5 +1,5 @@
 import { FlatCompat } from "@eslint/eslintrc";
-import commonPlugin from "common";
+import commonPlugin from "@minimaltech/eslint-config-common";
 import reactRefresh from "eslint-plugin-react-refresh";
 import reactPlugin from "eslint-plugin-react/configs/recommended.js";
 

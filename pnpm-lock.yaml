@@ -33,8 +33,6 @@ importers:
         specifier: ^8.56.10
         version: 8.56.10
 
-  packages/electron-config: {}
-
   packages/loopback-config:
     dependencies:
       '@eslint/compat':

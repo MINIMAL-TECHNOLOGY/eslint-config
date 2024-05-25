@@ -15,8 +15,8 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends("@loopback/eslint-config"),
   ...commonPlugin,
+  ...compat.extends("@loopback/eslint-config"),
   {
     rules: {
       // BASE RULES

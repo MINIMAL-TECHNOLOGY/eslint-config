@@ -1,5 +1,4 @@
-{
-  "name": "common",
+{ "name": "common",
   "type": "module",
   "version": "1.0.0",
   "main": "eslint.config.js",

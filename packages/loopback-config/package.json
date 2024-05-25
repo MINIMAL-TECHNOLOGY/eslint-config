@@ -1,5 +1,6 @@
 {
   "name": "@minimaltech/eslint-config-loopback",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "description": "ESLint configuration for TypeScript Loopback 4 projects",

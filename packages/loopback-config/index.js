@@ -1,6 +1,6 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
-import commonPlugin from "../common";
+import commonPlugin from "../common/index.js";
 import path from "path";
 import { fileURLToPath } from "url";
 

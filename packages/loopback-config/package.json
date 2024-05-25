@@ -10,8 +10,13 @@
     "typescript",
     "loopback"
   ],
+  "files": [
+    "index.cjs",
+    "index.js"
+  ],
   "exports": {
-    "import": "./index.js"
+    "import": "./index.js",
+    "require": "./index.cjs"
   },
   "author": "Minimal Technology developers",
   "license": "ISC",

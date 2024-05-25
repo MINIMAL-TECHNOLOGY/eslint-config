@@ -2,8 +2,13 @@
   "name": "@minimaltech/eslint-config-common",
   "version": "1.0.0",
   "main": "index.js",
+  "files": [
+    "index.cjs",
+    "index.js"
+  ],
   "exports": {
-    "import": "./index.js"
+    "import": "./index.js",
+    "require": "./index.cjs"
   },
   "description": "Common ESLint configuration for TypeScript projects",
   "keywords": [

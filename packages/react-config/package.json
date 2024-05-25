@@ -4,8 +4,13 @@
   "version": "1.0.0",
   "description": "ESLint configuration for TypeScript React projects",
   "main": "index.js",
+  "files": [
+    "index.cjs",
+    "index.js"
+  ],
   "exports": {
-    "import": "./index.js"
+    "import": "./index.js",
+    "require": "./index.cjs"
   },
   "keywords": [
     "eslint-config",

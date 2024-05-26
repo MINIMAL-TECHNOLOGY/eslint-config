@@ -20,7 +20,7 @@
   "author": "Minimal Technology developers",
   "license": "ISC",
   "dependencies": {
-    "@minimaltech/eslint-config-common": "workspace:*",
+    "@minimaltech/eslint-config-common": "^1.0.0",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",

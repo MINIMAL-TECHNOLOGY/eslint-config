@@ -1,6 +1,6 @@
 {
   "name": "mt-eslint-config-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint configuration for TypeScript React projects",
   "main": "lib/index.js",
   "scripts": {

@@ -1,7 +1,7 @@
 import { TSESLint } from "@typescript-eslint/utils";
 import { FlatCompat } from "@eslint/eslintrc";
 import { plugin as tseslint } from "typescript-eslint";
-import commonPlugin from "@minimaltech/eslint-config-common";
+import commonPlugin from "mt-eslint-config-common";
 import reactRefresh from "eslint-plugin-react-refresh";
 import reactPlugin from "eslint-plugin-react/configs/recommended.js";
 

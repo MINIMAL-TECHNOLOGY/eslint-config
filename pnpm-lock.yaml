@@ -47,7 +47,7 @@ importers:
       '@loopback/eslint-config':
         specifier: 15.0.2
         version: 15.0.2(eslint@8.57.0)(typescript@5.4.2)
-      '@minimaltech/eslint-config-common':
+      mt-eslint-config-common:
         specifier: ^1.0.0
         version: link:../common
     devDependencies:
@@ -81,9 +81,6 @@ importers:
 
   packages/react-config:
     dependencies:
-      '@minimaltech/eslint-config-common':
-        specifier: ^1.0.0
-        version: link:../common
       eslint:
         specifier: '>=8.57.0'
         version: 8.57.0
@@ -99,6 +96,9 @@ importers:
       eslint-plugin-storybook:
         specifier: ^0.8.0
         version: 0.8.0(eslint@8.57.0)(typescript@5.4.2)
+      mt-eslint-config-common:
+        specifier: ^1.0.0
+        version: link:../common
       typescript-eslint:
         specifier: ^7.10.0
         version: 7.10.0(eslint@8.57.0)(typescript@5.4.2)

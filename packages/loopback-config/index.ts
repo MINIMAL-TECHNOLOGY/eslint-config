@@ -1,6 +1,6 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
-import commonPlugin from "@minimaltech/eslint-config-common";
+import commonPlugin from "mt-eslint-config-common";
 import { TSESLint } from "@typescript-eslint/utils";
 
 const compat = new FlatCompat({

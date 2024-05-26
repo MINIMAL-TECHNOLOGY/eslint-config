@@ -1,5 +1,5 @@
 {
-  "name": "@minimaltech/eslint-config-react",
+  "name": "mt-eslint-config-react",
   "version": "1.0.0",
   "description": "ESLint configuration for TypeScript React projects",
   "main": "lib/index.js",
@@ -20,7 +20,7 @@
   "author": "Minimal Technology developers",
   "license": "ISC",
   "dependencies": {
-    "@minimaltech/eslint-config-common": "^1.0.0",
+    "mt-eslint-config-common": "^1.0.0",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",

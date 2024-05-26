@@ -1,5 +1,5 @@
 {
-  "name": "@minimaltech/eslint-config-loopback",
+  "name": "mt-eslint-config-loopback",
   "version": "1.0.0",
   "main": "lib/index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "@eslint/compat": "^1.0.1",
     "@eslint/eslintrc": "^3.1.0",
     "@loopback/eslint-config": "15.0.2",
-    "@minimaltech/eslint-config-common": "^1.0.0"
+    "mt-eslint-config-common": "^1.0.0"
   },
   "devDependencies": {
     "@types/eslint__js": "^8.42.3",

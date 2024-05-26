@@ -9,3 +9,4 @@ declare module "eslint-plugin-react/configs/recommended.js" {
   export = plugin;
 }
 declare module "@eslint/eslintrc";
+declare module "eslint-plugin-react-hooks";

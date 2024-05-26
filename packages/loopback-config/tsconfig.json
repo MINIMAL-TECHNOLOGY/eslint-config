@@ -1,0 +1,12 @@
+{
+  "extends": "tsconfigs/nodejs-module",
+  "compilerOptions": {
+    "outDir": "lib",
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
+  },
+  "include": [
+    "./index.ts",
+    "plugins.d.ts"
+  ]
+}

@@ -29,6 +29,12 @@ importers:
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.10
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
+      tsconfigs:
+        specifier: 5.0.0
+        version: 5.0.0
 
   packages/loopback-config:
     dependencies:
@@ -41,7 +47,16 @@ importers:
       '@loopback/eslint-config':
         specifier: 15.0.2
         version: 15.0.2(eslint@8.57.0)(typescript@5.4.2)
+      '@minimaltech/eslint-config-common':
+        specifier: workspace:*
+        version: link:../common
     devDependencies:
+      '@types/eslint__js':
+        specifier: ^8.42.3
+        version: 8.42.3
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.10.0
         version: 7.10.0(@typescript-eslint/parser@7.10.0)(eslint@8.57.0)(typescript@5.4.2)
@@ -60,9 +75,15 @@ importers:
       eslint-plugin-mocha:
         specifier: ^10.4.3
         version: 10.4.3(eslint@8.57.0)
+      tsconfigs:
+        specifier: 5.0.0
+        version: 5.0.0
 
   packages/react-config:
     dependencies:
+      '@minimaltech/eslint-config-common':
+        specifier: workspace:*
+        version: link:../common
       eslint:
         specifier: '>=8.57.0'
         version: 8.57.0
@@ -81,6 +102,13 @@ importers:
       typescript-eslint:
         specifier: ^7.10.0
         version: 7.10.0(eslint@8.57.0)(typescript@5.4.2)
+    devDependencies:
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
+      tsconfigs:
+        specifier: 5.0.0
+        version: 5.0.0
 
 packages:
 
@@ -212,6 +240,12 @@ packages:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
 
+  /@types/eslint__js@8.42.3:
+    resolution: {integrity: sha512-alfG737uhmPdnvkrLdZLcEKJ/B8s9Y4hrZ+YAdzUeoArBlSUERA2E87ROfOaS4jd/C45fzOoZzidLc1IPwLqOw==}
+    dependencies:
+      '@types/eslint': 8.56.10
+    dev: true
+
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
@@ -221,6 +255,12 @@ packages:
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: false
+
+  /@types/node@20.12.12:
+    resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
 
   /@types/semver@7.5.8:
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
@@ -2155,6 +2195,10 @@ packages:
       strip-bom: 3.0.0
     dev: false
 
+  /tsconfigs@5.0.0:
+    resolution: {integrity: sha512-mIURkwOBBtghy179f/uhXoJOJzAG4Zpvg5+PhG7m8P6BuQx72lrQ9qbFbZkr4svUX85BoHraRX1UYfg67VAjIw==}
+    dev: true
+
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: false
@@ -2259,6 +2303,10 @@ packages:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
     dev: false
+
+  /undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    dev: true
 
   /uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}

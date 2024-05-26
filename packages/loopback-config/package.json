@@ -1,8 +1,14 @@
 {
   "name": "@minimaltech/eslint-config-loopback",
-  "type": "module",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "tsc"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/index.d.ts"
+  ],
   "description": "ESLint configuration for TypeScript Loopback 4 projects",
   "keywords": [
     "eslint-config",
@@ -11,28 +17,24 @@
     "typescript",
     "loopback"
   ],
-  "files": [
-    "index.cjs",
-    "index.js"
-  ],
-  "exports": {
-    "import": "./index.js",
-    "require": "./index.cjs"
-  },
   "author": "Minimal Technology developers",
   "license": "ISC",
   "dependencies": {
     "@eslint/compat": "^1.0.1",
     "@eslint/eslintrc": "^3.1.0",
-    "@loopback/eslint-config": "15.0.2"
+    "@loopback/eslint-config": "15.0.2",
+    "@minimaltech/eslint-config-common": "workspace:*"
   },
   "devDependencies": {
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.12.12",
     "@typescript-eslint/eslint-plugin": "^7.10.0",
     "@typescript-eslint/parser": "^7.10.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-eslint-plugin": "^6.1.0",
-    "eslint-plugin-mocha": "^10.4.3"
+    "eslint-plugin-mocha": "^10.4.3",
+    "tsconfigs": "5.0.0"
   },
   "peerDependencies": {
     "eslint": ">=8.57.0"

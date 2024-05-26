@@ -1,5 +1,5 @@
 {
-  "name": "mt-eslint",
+  "name": "@minimaltech/eslint-config",
   "version": "1.0.0",
   "description": "ESLint configuration for Minimal Technology projects",
   "keywords": [
@@ -9,7 +9,7 @@
     "typescript"
   ],
   "scripts": {
-    "build": "pnpm -r run build"
+    "compile": "pnpm -r run compile"
   },
   "author": "Minimal Technology developers",
   "license": "ISC"

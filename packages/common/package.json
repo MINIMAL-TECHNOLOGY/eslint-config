@@ -1,16 +1,14 @@
 {
   "name": "@minimaltech/eslint-config-common",
-  "type": "module",
   "version": "1.0.0",
-  "main": "index.js",
-  "files": [
-    "index.cjs",
-    "index.js"
-  ],
-  "exports": {
-    "import": "./index.js",
-    "require": "./index.cjs"
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "tsc"
   },
+  "files": [
+    "lib/index.js",
+    "lib/index.d.ts"
+  ],
   "description": "Common ESLint configuration for TypeScript projects",
   "keywords": [
     "eslint-config",
@@ -29,9 +27,14 @@
     "prettier": "3.2.5"
   },
   "devDependencies": {
-    "@types/eslint": "^8.56.10"
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.12.12",
+    "tsconfigs": "5.0.0"
   },
   "peerDependencies": {
     "eslint": ">=8.57.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,20 +1,14 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
-import commonPlugin from "../common/index.js";
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import commonPlugin from "@minimaltech/eslint-config-common";
+import { TSESLint } from "@typescript-eslint/utils";
 
 const compat = new FlatCompat({
-  baseDirectory: __filename,
-  resolvePluginsRelativeTo: __dirname,
   recommendedConfig: js.configs.recommended,
   allConfig: js.configs.all,
 });
 
-export default [
+const configs: TSESLint.FlatConfig.ConfigArray = [
   ...commonPlugin,
   ...compat.extends("@loopback/eslint-config"),
   {
@@ -88,3 +82,5 @@ export default [
     },
   },
 ];
+
+export = configs;

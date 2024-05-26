@@ -1,12 +1,13 @@
+import { TSESLint } from "@typescript-eslint/utils";
 import { FlatCompat } from "@eslint/eslintrc";
 import { plugin as tseslint } from "typescript-eslint";
-import commonPlugin from "../common/index.js";
+import commonPlugin from "@minimaltech/eslint-config-common";
 import reactRefresh from "eslint-plugin-react-refresh";
 import reactPlugin from "eslint-plugin-react/configs/recommended.js";
 
 const compat = new FlatCompat();
 
-export default [
+const configs: TSESLint.FlatConfig.ConfigArray = [
   ...commonPlugin,
   ...compat.extends("plugin:storybook/recommended"),
   ...compat.config({
@@ -62,3 +63,5 @@ export default [
     },
   },
 ];
+
+export = configs;

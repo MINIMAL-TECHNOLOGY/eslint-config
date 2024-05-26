@@ -1,7 +1,8 @@
+import { TSESLint } from "@typescript-eslint/utils";
 import love from "eslint-config-love";
 import prettierPlugin from "eslint-plugin-prettier/recommended";
 
-export default [
+const configs: TSESLint.FlatConfig.ConfigArray = [
   {
     ...love,
     files: ["*.js", "*.jsx", "*.ts", "*.tsx"],
@@ -46,3 +47,5 @@ export default [
   },
   prettierPlugin,
 ];
+
+export = configs;

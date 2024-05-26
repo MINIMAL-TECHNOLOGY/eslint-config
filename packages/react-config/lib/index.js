@@ -4,12 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 const eslintrc_1 = require("@eslint/eslintrc");
 const typescript_eslint_1 = require("typescript-eslint");
-const eslint_config_common_1 = __importDefault(require("@minimaltech/eslint-config-common"));
+const mt_eslint_config_common_1 = __importDefault(require("mt-eslint-config-common"));
 const eslint_plugin_react_refresh_1 = __importDefault(require("eslint-plugin-react-refresh"));
 const recommended_js_1 = __importDefault(require("eslint-plugin-react/configs/recommended.js"));
 const compat = new eslintrc_1.FlatCompat();
 const configs = [
-    ...eslint_config_common_1.default,
+    ...mt_eslint_config_common_1.default,
     ...compat.extends("plugin:storybook/recommended"),
     ...compat.config({
         extends: "plugin:react-hooks/recommended",

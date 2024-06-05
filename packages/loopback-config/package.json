@@ -1,9 +1,8 @@
 {
   "name": "@mt/eslint-lb",
   "version": "1.0.0",
-  "main": "lib/index.js",
   "scripts": {
-    "compile": "tsc"
+    "compile": "tsc -b"
   },
   "files": [
     "lib/index.js",
@@ -22,13 +21,7 @@
   "dependencies": {
     "@eslint/compat": "^1.0.1",
     "@eslint/eslintrc": "^3.1.0",
-    "@loopback/eslint-config": "15.0.2",
-    "@mt/eslint-common": "workspace:*"
-  },
-  "dependenciesMeta": {
-    "@mt/eslint-common": {
-      "injected": true
-    }
+    "@loopback/eslint-config": "15.0.2"
   },
   "devDependencies": {
     "@types/eslint__js": "^8.42.3",

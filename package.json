@@ -2,6 +2,11 @@
   "name": "@mt/eslint",
   "version": "1.0.0",
   "description": "ESLint configuration for Minimal Technology projects",
+  "exports": {
+    "./common": "./dist/common/index.js",
+    "./react": "./dist/react-config/index.js",
+    "./loopback": "./dist/loopback-config/index.js"
+  },
   "keywords": [
     "eslint-config",
     "eslint",
@@ -9,7 +14,7 @@
     "typescript"
   ],
   "scripts": {
-    "compile": "pnpm -r run compile"
+    "compile": "rm -rf ./dist && pnpm -r run compile"
   },
   "author": "Minimal Technology developers",
   "license": "ISC"

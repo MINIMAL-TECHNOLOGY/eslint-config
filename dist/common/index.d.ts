@@ -479,7 +479,7 @@ declare const configs: ({
         };
     } | {
         ecmaVersion?: 3 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | "latest" | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | undefined;
-        sourceType?: "script" | "module" | "commonjs" | undefined;
+        sourceType?: "module" | "script" | "commonjs" | undefined;
         globals?: import("eslint").ESLint.Globals | undefined;
         parser?: import("eslint").Linter.FlatConfigParserModule | undefined;
         parserOptions?: import("eslint").Linter.ParserOptions | undefined;

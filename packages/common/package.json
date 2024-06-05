@@ -1,10 +1,6 @@
 {
   "name": "@mt/eslint-common",
   "version": "1.0.0",
-  "main": "lib/index.js",
-  "scripts": {
-    "compile": "tsc"
-  },
   "files": [
     "lib/index.js",
     "lib/index.d.ts"

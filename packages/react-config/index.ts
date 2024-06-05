@@ -1,4 +1,4 @@
-import commonPlugin from "@mt/eslint-common";
+import commonPlugin from "../common";
 import { TSESLint } from "@typescript-eslint/utils";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";

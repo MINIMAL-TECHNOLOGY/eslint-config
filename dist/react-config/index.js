@@ -2,13 +2,13 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-const eslint_common_1 = __importDefault(require("@mt/eslint-common"));
+const common_1 = __importDefault(require("../common"));
 const eslint_plugin_react_1 = __importDefault(require("eslint-plugin-react"));
 const eslint_plugin_react_hooks_1 = __importDefault(require("eslint-plugin-react-hooks"));
 const eslint_plugin_react_refresh_1 = __importDefault(require("eslint-plugin-react-refresh"));
 const typescript_eslint_1 = require("typescript-eslint");
 const configs = [
-    ...eslint_common_1.default,
+    ...common_1.default,
     {
         files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
         plugins: {

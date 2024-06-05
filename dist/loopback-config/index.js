@@ -4,13 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 const eslintrc_1 = require("@eslint/eslintrc");
 const js_1 = __importDefault(require("@eslint/js"));
-const eslint_common_1 = __importDefault(require("@mt/eslint-common"));
+const common_1 = __importDefault(require("../common"));
 const compat = new eslintrc_1.FlatCompat({
     recommendedConfig: js_1.default.configs.recommended,
     allConfig: js_1.default.configs.all,
 });
 const configs = [
-    ...eslint_common_1.default,
+    ...common_1.default,
     ...compat.extends("@loopback/eslint-config"),
     {
         rules: {

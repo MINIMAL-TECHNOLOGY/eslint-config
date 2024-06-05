@@ -1,12 +1,10 @@
 import { TSESLint } from "@typescript-eslint/utils";
-declare const configs: {
+declare const configs: ({
     files: string[];
-    ignores: string[];
     rules: {
         "@typescript-eslint/no-invalid-void-type": "off";
         "@typescript-eslint/prefer-nullish-coalescing": "off";
         "@typescript-eslint/no-confusing-void-expression": "off";
-        "@typescript-eslint/return-await": "off";
         "prefer-promise-reject-errors": "off";
         "@typescript-eslint/no-extraneous-class": "off";
         "@typescript-eslint/strict-boolean-expressions": "off";
@@ -235,6 +233,7 @@ declare const configs: {
         '@typescript-eslint/restrict-template-expressions': ["error", {
             allowNumber: boolean;
         }];
+        '@typescript-eslint/return-await': ["error", string];
         '@typescript-eslint/semi': ["error", string];
         '@typescript-eslint/space-before-blocks': ["error", string];
         '@typescript-eslint/space-before-function-paren': ["error", string];
@@ -472,6 +471,7 @@ declare const configs: {
         'promise/param-names': ["error"];
     };
     name?: string | undefined;
+    ignores?: string[] | undefined;
     languageOptions: {
         parser: TSESLint.Parser.LooseParserModule;
         parserOptions: {
@@ -496,5 +496,7 @@ declare const configs: {
         promise: TSESLint.Linter.Plugin;
     } | Record<string, import("eslint").ESLint.Plugin>;
     settings?: Record<string, unknown> | undefined;
-};
+} | {
+    ignores: string[];
+})[];
 export = configs;

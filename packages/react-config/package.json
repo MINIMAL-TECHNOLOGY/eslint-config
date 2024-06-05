@@ -1,6 +1,6 @@
 {
-  "name": "mt-eslint-config-react",
-  "version": "1.0.1",
+  "name": "@mt/eslint-react",
+  "version": "1.0.0",
   "description": "ESLint configuration for TypeScript React projects",
   "main": "lib/index.js",
   "scripts": {
@@ -20,13 +20,17 @@
   "author": "Minimal Technology developers",
   "license": "ISC",
   "dependencies": {
-    "@eslint/compat": "^1.0.1",
-    "mt-eslint-config-common": "^1.0.0",
+    "@mt/eslint-common": "^1.0.0",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.8.0",
-    "typescript-eslint": "^7.10.0"
+    "typescript-eslint": "^7.11.0"
+  },
+  "dependenciesMeta": {
+    "@mt/eslint-common": {
+      "injected": true
+    }
   },
   "devDependencies": {
     "@types/node": "^20.12.12",

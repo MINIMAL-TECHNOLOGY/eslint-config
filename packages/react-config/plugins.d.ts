@@ -10,3 +10,4 @@ declare module "eslint-plugin-react/configs/recommended.js" {
 }
 declare module "@eslint/eslintrc";
 declare module "eslint-plugin-react-hooks";
+declare module "eslint-plugin-react";

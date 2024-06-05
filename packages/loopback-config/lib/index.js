@@ -4,13 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 const eslintrc_1 = require("@eslint/eslintrc");
 const js_1 = __importDefault(require("@eslint/js"));
-const mt_eslint_config_common_1 = __importDefault(require("mt-eslint-config-common"));
+const eslint_common_1 = __importDefault(require("@mt/eslint-common"));
 const compat = new eslintrc_1.FlatCompat({
     recommendedConfig: js_1.default.configs.recommended,
     allConfig: js_1.default.configs.all,
 });
 const configs = [
-    ...mt_eslint_config_common_1.default,
+    ...eslint_common_1.default,
     ...compat.extends("@loopback/eslint-config"),
     {
         rules: {
@@ -33,7 +33,6 @@ const configs = [
             "@typescript-eslint/no-explicit-any": "warn",
             "@typescript-eslint/no-floating-promises": "warn",
             // ERROR
-            "@typescript-eslint/return-await": "error",
             "@typescript-eslint/no-unused-vars": [
                 "error",
                 {
@@ -44,6 +43,16 @@ const configs = [
             ],
             "@typescript-eslint/naming-convention": [
                 "error",
+                {
+                    selector: "interface",
+                    format: ["PascalCase"],
+                    prefix: ["I"],
+                },
+                {
+                    selector: "typeAlias",
+                    format: ["PascalCase"],
+                    prefix: ["T"],
+                },
                 {
                     selector: "default",
                     format: ["camelCase", "PascalCase"],

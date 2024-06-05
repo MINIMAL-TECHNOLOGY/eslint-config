@@ -1,5 +1,5 @@
 {
-  "name": "@minimaltech/eslint-config",
+  "name": "@mt/eslint",
   "version": "1.0.0",
   "description": "ESLint configuration for Minimal Technology projects",
   "keywords": [

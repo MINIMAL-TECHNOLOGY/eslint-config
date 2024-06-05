@@ -1,6 +1,6 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
-import commonPlugin from "mt-eslint-config-common";
+import commonPlugin from "@mt/eslint-common";
 import { TSESLint } from "@typescript-eslint/utils";
 
 const compat = new FlatCompat({
@@ -34,7 +34,6 @@ const configs: TSESLint.FlatConfig.ConfigArray = [
       "@typescript-eslint/no-floating-promises": "warn",
 
       // ERROR
-      "@typescript-eslint/return-await": "error",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
@@ -45,6 +44,16 @@ const configs: TSESLint.FlatConfig.ConfigArray = [
       ],
       "@typescript-eslint/naming-convention": [
         "error",
+        {
+          selector: "interface",
+          format: ["PascalCase"],
+          prefix: ["I"],
+        },
+        {
+          selector: "typeAlias",
+          format: ["PascalCase"],
+          prefix: ["T"],
+        },
         {
           selector: "default",
           format: ["camelCase", "PascalCase"],

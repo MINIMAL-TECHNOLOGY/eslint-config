@@ -2,12 +2,8 @@
   "name": "@mt/eslint-lb",
   "version": "1.0.0",
   "scripts": {
-    "compile": "tsc -b"
+    "compile": "tsc"
   },
-  "files": [
-    "lib/index.js",
-    "lib/index.d.ts"
-  ],
   "description": "ESLint configuration for TypeScript Loopback 4 projects",
   "keywords": [
     "eslint-config",

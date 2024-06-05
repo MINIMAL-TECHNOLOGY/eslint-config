@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "description": "ESLint configuration for TypeScript React projects",
   "scripts": {
-    "compile": "tsc -b"
+    "compile": "tsc"
   },
-  "files": [
-    "lib/index.js",
-    "lib/index.d.ts"
-  ],
   "keywords": [
     "eslint-config",
     "eslint",

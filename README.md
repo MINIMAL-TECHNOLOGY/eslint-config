@@ -17,58 +17,52 @@ This command installs this package as a devDependency in your project.
 This eslint configuration expects some `peerDependencies` to be installed in your project. Please ensure that you have them installed as devDependency.
 You can install them using the following command:
 
-- For backend:
+- For Loopback:
 
 ```bash
 pnpm add -D \
-  eslint@">=8.0.0" \
-  prettier@">=3.0.0" \
+  eslint@8.57.0 \
+  prettier@3.2.5 \
   typescript@^5.0.0 \
-  @loopback/eslint-config@^15.0.0 \
-  eslint-plugin-prettier@^5.1.3 \
-  eslint-plugin-import@^2.25.2 \
-  eslint-plugin-n@^15.0.0 \
-  eslint-plugin-promise@^6.0.0 \
-  @typescript-eslint/eslint-plugin@^6.4.0 \
-  eslint-config-love@latest
+  @loopback/eslint-config@15.0.2 \
+  eslint-plugin-prettier@5.1.3 \
+  eslint-config-prettier@^9.1.0 \
+  eslint-config-love@^48.0.0
 ```
 
-- For frontend:
+- For React:
 
 ```bash
 pnpm add -D \
-  eslint@">=8.0.0" \
-  prettier@">=3.0.0" \
+  eslint@8.57.0 \
+  prettier@3.2.5 \
   typescript@^5.0.0 \
-  @typescript-eslint/eslint-plugin@^6.4.0 \
+  typescript-eslint@^7.11.0 \
   eslint-config-prettier@^9.1.0 \
-  eslint-plugin-prettier@^5.1.3 \
-  eslint-config-love@latest \
-  eslint-plugin-import@^2.25.2 \
-  eslint-plugin-n@^15.0.0 \
-  eslint-plugin-promise@^6.0.0 \
+  eslint-plugin-prettier@5.1.3 \
+  eslint-config-love@^48.0.0 \
   eslint-plugin-react@^7.34.0 \
-  eslint-plugin-react-hooks@^4.6.0 \
+  eslint-plugin-react-hooks@^4.6.2 \
   eslint-plugin-react-refresh@^0.4.5 \
   eslint-plugin-storybook@^0.8.0
 ```
 
 ## Usage
 
-Create a `.eslintrc.cjs` file in your project's root (or update the existing one) with the following content:
+Create a `eslint.config.js` file in your project's root (or update the existing one) with the following content:
 
-- For backend:
+- For Loopback:
 
 ```javascript
-module.exports = {
-  extends: [require.resolve("@mt/eslint/packages/be-config")],
-};
+import loopbackConfig from "@mt/eslint/loopback";
+
+export default [...loopbackConfig];
 ```
 
-- For frontend:
+- For React:
 
 ```javascript
-module.exports = {
-  extends: [require.resolve("@mt/eslint/packages/fe-config")],
-};
+import reactConfig from "@mt/eslint/react";
+
+export default [...reactConfig];
 ```

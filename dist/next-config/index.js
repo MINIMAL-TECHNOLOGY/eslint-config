@@ -2,16 +2,19 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-const eslintrc_1 = require("@eslint/eslintrc");
-const js_1 = __importDefault(require("@eslint/js"));
+const eslint_plugin_next_1 = __importDefault(require("@next/eslint-plugin-next"));
 const react_config_1 = __importDefault(require("../react-config"));
-const compat = new eslintrc_1.FlatCompat({
-    recommendedConfig: js_1.default.configs.recommended,
-    allConfig: js_1.default.configs.all,
-});
 const configs = [
     ...react_config_1.default,
-    ...compat.extends("plugin:@next/next/core-web-vitals"),
+    {
+        plugins: {
+            "@next/next": eslint_plugin_next_1.default,
+        },
+        rules: {
+            ...eslint_plugin_next_1.default.configs.recommended.rules,
+            ...eslint_plugin_next_1.default.configs["core-web-vitals"].rules,
+        },
+    },
 ];
 module.exports = configs;
 //# sourceMappingURL=index.js.map

@@ -1,0 +1,30 @@
+{
+  "name": "@mt/eslint-next",
+  "version": "1.0.0",
+  "description": "ESLint configuration for TypeScript Next projects",
+  "scripts": {
+    "compile": "tsc"
+  },
+  "keywords": [
+    "eslint-config",
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "next"
+  ],
+  "author": "Minimal Technology developers",
+  "license": "ISC",
+  "dependencies": {
+    "@next/eslint-plugin-next": "^14.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "tsconfigs": "5.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.57.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

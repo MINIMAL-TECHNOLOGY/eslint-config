@@ -5,7 +5,8 @@
   "exports": {
     "./common": "./dist/common/index.js",
     "./react": "./dist/react-config/index.js",
-    "./loopback": "./dist/loopback-config/index.js"
+    "./loopback": "./dist/loopback-config/index.js",
+    "./next": "./dist/next-config/index.js"
   },
   "keywords": [
     "eslint-config",

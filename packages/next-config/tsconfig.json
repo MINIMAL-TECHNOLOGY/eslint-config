@@ -1,0 +1,13 @@
+{
+  "extends": "tsconfigs/nodejs-module",
+  "compilerOptions": {
+    "outDir": "../../dist",
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
+  },
+  "include": [
+    "./index.ts",
+    "plugins.d.ts",
+    "../react-config/plugins.d.ts"
+  ]
+}

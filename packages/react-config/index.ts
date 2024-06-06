@@ -3,7 +3,10 @@ import { TSESLint } from "@typescript-eslint/utils";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import { plugin as tseslintPlugin } from "typescript-eslint";
+import {
+  plugin as tseslintPlugin,
+  parser as tsParser,
+} from "typescript-eslint";
 
 const configs: TSESLint.FlatConfig.ConfigArray = [
   ...commonPlugin,
@@ -14,6 +17,9 @@ const configs: TSESLint.FlatConfig.ConfigArray = [
       react: reactPlugin,
       "react-refresh": { ...reactRefresh },
       "react-hooks": reactHooksPlugin,
+    },
+    languageOptions: {
+      parser: tsParser,
     },
     rules: {
       ...reactHooksPlugin.configs.recommended.rules,

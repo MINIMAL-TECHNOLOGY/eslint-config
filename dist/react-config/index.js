@@ -17,6 +17,9 @@ const configs = [
             "react-refresh": { ...eslint_plugin_react_refresh_1.default },
             "react-hooks": eslint_plugin_react_hooks_1.default,
         },
+        languageOptions: {
+            parser: typescript_eslint_1.parser,
+        },
         rules: {
             ...eslint_plugin_react_hooks_1.default.configs.recommended.rules,
             ...eslint_plugin_react_1.default.configs.recommended.rules,

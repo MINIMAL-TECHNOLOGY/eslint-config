@@ -15,6 +15,7 @@
   "author": "Minimal Technology developers",
   "license": "ISC",
   "dependencies": {
+    "@eslint/eslintrc": "^3.1.0",
     "@next/eslint-plugin-next": "^14.2.3"
   },
   "devDependencies": {

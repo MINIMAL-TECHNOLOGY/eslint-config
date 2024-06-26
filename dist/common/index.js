@@ -71,7 +71,7 @@ const configs = [
             "**/build/",
             "**/dist/",
             "**/.next/",
-            "eslint.config.js",
+            "eslint.config.*",
         ],
     },
 ];

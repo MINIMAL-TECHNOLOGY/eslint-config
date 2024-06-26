@@ -30,10 +30,10 @@ declare const configs: ({
         }];
         '@typescript-eslint/await-thenable': ["error"];
         '@typescript-eslint/ban-ts-comment': ["error", {
-            'ts-expect-error': string;
-            'ts-ignore': boolean;
-            'ts-nocheck': boolean;
-            'ts-check': boolean;
+            "ts-expect-error": string;
+            "ts-ignore": boolean;
+            "ts-nocheck": boolean;
+            "ts-check": boolean;
             minimumDescriptionLength: number;
         }];
         '@typescript-eslint/ban-tslint-comment': ["error"];
@@ -66,7 +66,7 @@ declare const configs: ({
                 Object: {
                     message: string;
                 };
-                '{}': {
+                "{}": {
                     message: string;
                 };
             };
@@ -397,9 +397,9 @@ declare const configs: ({
         }];
         'operator-linebreak': ["error", string, {
             overrides: {
-                '?': string;
-                ':': string;
-                '|>': string;
+                "?": string;
+                ":": string;
+                "|>": string;
             };
         }];
         'padded-blocks': ["error", {
@@ -470,32 +470,32 @@ declare const configs: ({
         'n/process-exit-as-throw': ["error"];
         'promise/param-names': ["error"];
     };
-    name?: string | undefined;
-    ignores?: string[] | undefined;
+    name?: string;
+    ignores?: string[];
     languageOptions: {
         parser: TSESLint.Parser.LooseParserModule;
         parserOptions: {
             project: true;
         };
     } | {
-        ecmaVersion?: 3 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | "latest" | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | undefined;
-        sourceType?: "script" | "module" | "commonjs" | undefined;
-        globals?: import("eslint").ESLint.Globals | undefined;
-        parser?: import("eslint").Linter.FlatConfigParserModule | undefined;
-        parserOptions?: import("eslint").Linter.ParserOptions | undefined;
+        ecmaVersion?: import("eslint").Linter.ParserOptions["ecmaVersion"];
+        sourceType?: "script" | "module" | "commonjs";
+        globals?: import("eslint").ESLint.Environment["globals"];
+        parser?: import("eslint").Linter.FlatConfigParserModule;
+        parserOptions?: import("eslint").ESLint.Environment["parserOptions"];
     };
     linterOptions?: {
-        noInlineConfig?: boolean | undefined;
-        reportUnusedDisableDirectives?: boolean | import("eslint").Linter.Severity | import("eslint").Linter.StringSeverity | undefined;
-    } | undefined;
-    processor?: string | import("eslint").Linter.Processor<string | import("eslint").Linter.ProcessorFile> | undefined;
+        noInlineConfig?: boolean;
+        reportUnusedDisableDirectives?: import("eslint").Linter.Severity | import("eslint").Linter.StringSeverity | boolean;
+    };
+    processor?: string | import("eslint").Linter.Processor;
     plugins: {
         '@typescript-eslint': TSESLint.FlatConfig.Plugin;
         import: TSESLint.Linter.Plugin;
         n: TSESLint.Linter.Plugin;
         promise: TSESLint.Linter.Plugin;
     } | Record<string, import("eslint").ESLint.Plugin>;
-    settings?: Record<string, unknown> | undefined;
+    settings?: Record<string, unknown>;
 } | {
     ignores: string[];
 })[];

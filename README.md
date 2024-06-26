@@ -43,9 +43,26 @@ pnpm add -D \
   eslint-config-love@^48.0.0 \
   eslint-plugin-react@^7.34.0 \
   eslint-plugin-react-hooks@^4.6.2 \
-  eslint-plugin-react-refresh@^0.4.5 \
-  eslint-plugin-storybook@^0.8.0
+  eslint-plugin-react-refresh@^0.4.5
 ```
+
+- For NextJS:
+
+```bash
+pnpm add -D \
+  eslint@8.57.0 \
+  prettier@3.2.5 \
+  typescript@^5.0.0 \
+  typescript-eslint@^7.11.0 \
+  eslint-config-prettier@^9.1.0 \
+  eslint-plugin-prettier@5.1.3 \
+  eslint-config-love@^48.0.0 \
+  eslint-plugin-react@^7.34.0 \
+  eslint-plugin-react-hooks@^4.6.2 \
+  eslint-plugin-react-refresh@^0.4.5 \
+  @next/eslint-plugin-next@^14.2.3
+```
+
 
 ## Usage
 
@@ -65,4 +82,12 @@ export default [...loopbackConfig];
 import reactConfig from "@mt/eslint/react";
 
 export default [...reactConfig];
+```
+
+- For NextJS:
+
+```javascript
+import nextConfig from "@mt/eslint/next";
+
+export default [...nextConfig];
 ```

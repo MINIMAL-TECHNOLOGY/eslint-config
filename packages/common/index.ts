@@ -1,12 +1,13 @@
 import { TSESLint } from "@typescript-eslint/utils";
-import * as love from "eslint-config-love";
-import * as prettierPlugin from "eslint-plugin-prettier/recommended";
+import love from "eslint-config-love";
+import prettierPlugin from "eslint-plugin-prettier/recommended";
 
-const configs = [
+const configs: TSESLint.FlatConfig.ConfigArray = [
   {
-    ...love,
     ...prettierPlugin,
-    files: ["**/*.{js,jsx,ts,tsx"],
+    ...love,
+    plugins: { ...love.plugins, ...prettierPlugin.plugins },
+    files: ["**/*.js", "**/*.ts"],
     rules: {
       ...love.rules,
       ...prettierPlugin.rules,
@@ -50,9 +51,9 @@ const configs = [
       "**/build/",
       "**/dist/",
       "**/.next/",
-      "eslint.config.*",
+      "**/eslint.config.*",
     ],
   },
-] satisfies TSESLint.FlatConfig.ConfigArray;
+];
 
 export = configs;

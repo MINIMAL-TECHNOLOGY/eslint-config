@@ -1,10 +1,6 @@
 {
   "name": "@mt/eslint-common",
   "version": "1.0.0",
-  "files": [
-    "lib/index.js",
-    "lib/index.d.ts"
-  ],
   "description": "Common ESLint configuration for TypeScript projects",
   "keywords": [
     "eslint-config",

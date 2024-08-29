@@ -10,8 +10,8 @@ const compat = new eslintrc_1.FlatCompat({
     allConfig: js_1.default.configs.all,
 });
 const configs = [
-    ...common_1.default,
     ...compat.extends("@loopback/eslint-config"),
+    common_1.default,
     {
         rules: {
             // BASE RULES

@@ -1,19 +1,12 @@
 {
   "name": "@mt/eslint-react",
   "version": "0.0.1",
-  "description": "ESLint configuration for TypeScript React projects",
+  "description": "ESLint configuration for React projects",
+  "author": "Minimal Technology developers",
+  "license": "MIT",
   "scripts": {
     "compile": "tsc"
   },
-  "keywords": [
-    "eslint-config",
-    "eslint",
-    "eslintconfig",
-    "typescript",
-    "react"
-  ],
-  "author": "Minimal Technology developers",
-  "license": "MIT",
   "dependencies": {
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.2",

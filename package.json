@@ -2,23 +2,36 @@
   "name": "@minimaltech/linter",
   "version": "0.0.1",
   "description": "Minimal Technology - Linter configurations",
+  "keywords": [
+    "eslint-config",
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "linter"
+  ],
+  "author": "Minimal Technology developers",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
   "exports": {
     "./common": "./dist/common/index.js",
     "./react": "./dist/react-config/index.js",
     "./loopback": "./dist/loopback-config/index.js",
     "./next": "./dist/next-config/index.js"
   },
-  "keywords": [
-    "eslint-config",
-    "eslint",
-    "eslintconfig",
-    "typescript"
-  ],
   "scripts": {
     "compile": "rm -rf ./dist && pnpm -r run compile"
   },
-  "author": "Minimal Technology developers",
-  "license": "MIT",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist",
+    "!/**/tests",
+    "!/**/dist/tests",
+    "!/**/__tests__"
+  ],
   "publishConfig": {
     "access": "public"
   }

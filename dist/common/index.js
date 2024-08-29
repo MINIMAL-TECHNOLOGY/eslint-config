@@ -2,10 +2,8 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-const eslint_config_love_1 = __importDefault(require("eslint-config-love"));
 const recommended_1 = __importDefault(require("eslint-plugin-prettier/recommended"));
 const configs = [
-    eslint_config_love_1.default,
     recommended_1.default,
     {
         files: ["**/*.js", "**/*.ts"],

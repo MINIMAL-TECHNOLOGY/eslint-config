@@ -1,16 +1,15 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import commonPlugin from "../common";
-import { TSESLint } from "@typescript-eslint/utils";
 
 const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,
   allConfig: js.configs.all,
 });
 
-const configs: TSESLint.FlatConfig.ConfigArray = [
-  ...commonPlugin,
+const configs = [
   ...compat.extends("@loopback/eslint-config"),
+  commonPlugin,
   {
     rules: {
       // BASE RULES

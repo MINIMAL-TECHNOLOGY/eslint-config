@@ -1,19 +1,12 @@
 {
   "name": "@minimaltech/eslint-loopback",
   "version": "0.0.1",
+  "description": "ESLint configuration for NodeJS projects",
+  "author": "Minimal Technology developers",
+  "license": "MIT",
   "scripts": {
     "compile": "tsc"
   },
-  "description": "ESLint configuration for TypeScript Loopback 4 projects",
-  "keywords": [
-    "eslint-config",
-    "eslint",
-    "eslintconfig",
-    "typescript",
-    "loopback"
-  ],
-  "author": "Minimal Technology developers",
-  "license": "MIT",
   "dependencies": {
     "@eslint/eslintrc": "^3.1.0",
     "@loopback/eslint-config": "^15.0.3",
@@ -26,8 +19,5 @@
   },
   "peerDependencies": {
     "eslint": ">=8.57.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

@@ -1,8 +1,6 @@
-import love from "eslint-config-love";
 import prettierPlugin from "eslint-plugin-prettier/recommended";
 
 const configs = [
-  love,
   prettierPlugin,
   {
     files: ["**/*.js", "**/*.ts"],

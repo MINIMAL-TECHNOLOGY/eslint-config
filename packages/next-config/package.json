@@ -1,19 +1,12 @@
 {
   "name": "@minimaltech/eslint-next",
   "version": "0.0.1",
-  "description": "ESLint configuration for TypeScript Next projects",
+  "description": "ESLint configuration for Next projects",
+  "author": "Minimal Technology developers",
+  "license": "MIT",
   "scripts": {
     "compile": "tsc"
   },
-  "keywords": [
-    "eslint-config",
-    "eslint",
-    "eslintconfig",
-    "typescript",
-    "next"
-  ],
-  "author": "Minimal Technology developers",
-  "license": "ISC",
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.3"
   },
@@ -23,8 +16,5 @@
   },
   "peerDependencies": {
     "eslint": ">=8.57.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

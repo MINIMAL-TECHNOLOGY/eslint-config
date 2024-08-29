@@ -11,7 +11,14 @@
   },
   "scripts": {
     "compile": "rm -rf packages/*/dist && pnpm -r run compile",
-    "prerelease": "pnpm compile",
-    "release": "pnpm -r run release"
+    "compile:node": "rm -rf packages/node/dist && pnpm --filter ./packages/node run compile",
+    "compile:next": "rm -rf packages/next/dist && pnpm --filter ./packages/next run compilep",
+    "compile:react": "rm -rf packages/react/dist && pnpm --filter ./packages/react run compile",
+    "prerelease:node": "pnpm compile:node",
+    "release:node": "pnpm --filter ./packages/node run release",
+    "prerelease:next": "pnpm compile:next",
+    "release:next": "pnpm --filter ./packages/next run release",
+    "prerelease:react": "pnpm react",
+    "release:react": "pnpm --filter ./packages/react run release"
   }
 }

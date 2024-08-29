@@ -23,6 +23,10 @@ const configs = [
     rules: {
       ...reactHooksPlugin.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
+      "no-debugger": "off",
+      "no-shadow": "off",
+      "no-undef": "off",
+
       "react-hooks/rules-of-hooks": "warn",
       "react-hooks/exhaustive-deps": "error",
       "react-refresh/only-export-components": [
@@ -31,30 +35,8 @@ const configs = [
       ],
       "react/jsx-boolean-value": "error",
       "react/react-in-jsx-scope": "off",
+
       "@typescript-eslint/ban-types": "off",
-      "@typescript-eslint/no-empty-function": "off",
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-shadow": "warn",
-      "@typescript-eslint/no-unused-vars": "warn",
-      curly: ["error", "all"],
-      "no-debugger": "off",
-      "no-shadow": "off",
-      "no-undef": "off",
-      "@typescript-eslint/naming-convention": [
-        "error",
-        {
-          selector: "interface",
-          format: ["PascalCase"],
-          prefix: ["I"],
-        },
-        {
-          selector: "typeAlias",
-          format: ["PascalCase"],
-          prefix: ["T"],
-          filter: { regex: "^(RootState|AppDispatch)$", match: false },
-        },
-      ],
-      semi: "off",
     },
     settings: { react: { version: "detect" } },
   },

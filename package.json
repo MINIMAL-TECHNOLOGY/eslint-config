@@ -18,7 +18,7 @@
     "release:node": "pnpm --filter ./packages/node run release",
     "prerelease:next": "pnpm compile:next",
     "release:next": "pnpm --filter ./packages/next run release",
-    "prerelease:react": "pnpm react",
+    "prerelease:react": "pnpm compile:react",
     "release:react": "pnpm --filter ./packages/react run release"
   }
 }

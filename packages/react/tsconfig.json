@@ -1,7 +1,6 @@
 {
   "extends": "tsconfigs/nodejs-module",
   "compilerOptions": {
-    "rootDir": "../",
     "outDir": "dist",
     "module": "nodenext",
     "moduleResolution": "nodenext"

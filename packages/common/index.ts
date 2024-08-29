@@ -7,7 +7,7 @@ const configs = [
     rules: {
       "prefer-promise-reject-errors": "off",
 
-      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-unsafe-function-type": "off",
       "@typescript-eslint/no-invalid-this": "off",
       "@typescript-eslint/no-this-alias": "off",

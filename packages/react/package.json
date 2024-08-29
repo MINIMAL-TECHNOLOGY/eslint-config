@@ -1,14 +1,14 @@
 {
-  "name": "@mt/eslint-react",
+  "name": "@minimaltech/eslint-react",
   "version": "0.0.1",
-  "description": "ESLint configuration for React projects",
-  "author": "Minimal Technology developers",
+  "description": "React ESLint configuration",
+  "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/react/index.js",
+  "types": "dist/react/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "release": "pnpm publish --no-git-check"
+    "release": "pnpm publish"
   },
   "dependencies": {
     "eslint-plugin-react": "^7.34.0",

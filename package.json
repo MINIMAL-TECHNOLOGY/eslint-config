@@ -2,16 +2,9 @@
   "name": "@minimaltech/linter",
   "version": "0.0.3",
   "description": "Minimal Technology - Linter configurations",
-  "private": true,
-  "keywords": [
-    "eslint-config",
-    "eslint",
-    "eslintconfig",
-    "typescript",
-    "linter"
-  ],
-  "author": "Minimal Technology developers",
+  "author": "Minimal Technology <developer@minimaltek.com>",
   "license": "MIT",
+  "private": true,
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"

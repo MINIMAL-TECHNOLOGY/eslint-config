@@ -1,8 +1,8 @@
 {
   "name": "@miminaltech/eslint-common",
   "version": "0.0.1",
-  "description": "Common ESLint configuration for TypeScript projects",
-  "author": "Minimal Technology developers",
+  "description": "Common ESLint configuration",
+  "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",
   "dependencies": {
     "eslint": "8.57.0",

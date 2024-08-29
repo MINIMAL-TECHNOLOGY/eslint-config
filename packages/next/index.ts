@@ -1,7 +1,7 @@
 import nextPlugin from "@next/eslint-plugin-next";
-import reactPlugin from "../react-config";
+import reactPlugin from "../react";
 
-const configs = [
+export const configs = [
   ...reactPlugin,
   {
     plugins: {
@@ -13,5 +13,3 @@ const configs = [
     },
   },
 ];
-
-export = configs;

@@ -1,7 +1,7 @@
 {
-  "name": "@mt/eslint",
-  "version": "1.0.0",
-  "description": "ESLint configuration for Minimal Technology projects",
+  "name": "@minimaltech/linter",
+  "version": "0.0.1",
+  "description": "Minimal Technology - Linter configurations",
   "exports": {
     "./common": "./dist/common/index.js",
     "./react": "./dist/react-config/index.js",

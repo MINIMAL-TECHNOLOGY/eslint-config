@@ -1,5 +1,3 @@
-import commonPlugin from "../common";
-import { TSESLint } from "@typescript-eslint/utils";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
@@ -7,8 +5,9 @@ import {
   plugin as tseslintPlugin,
   parser as tsParser,
 } from "typescript-eslint";
+import commonPlugin from "../common";
 
-const configs: TSESLint.FlatConfig.ConfigArray = [
+const configs = [
   ...commonPlugin,
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],

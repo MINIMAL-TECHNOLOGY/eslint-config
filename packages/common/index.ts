@@ -1,21 +1,25 @@
-import { TSESLint } from "@typescript-eslint/utils";
 import love from "eslint-config-love";
 import prettierPlugin from "eslint-plugin-prettier/recommended";
 
-const configs: TSESLint.FlatConfig.ConfigArray = [
+const configs = [
+  love,
+  prettierPlugin,
   {
-    ...prettierPlugin,
-    ...love,
-    plugins: { ...love.plugins, ...prettierPlugin.plugins },
     files: ["**/*.js", "**/*.ts"],
     rules: {
-      ...love.rules,
-      ...prettierPlugin.rules,
-      "@typescript-eslint/no-invalid-void-type": "off",
-      "@typescript-eslint/prefer-nullish-coalescing": "off",
-      "@typescript-eslint/no-confusing-void-expression": "off",
       "prefer-promise-reject-errors": "off",
+
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-function-type": "off",
+      "@typescript-eslint/no-invalid-this": "off",
+      "@typescript-eslint/no-this-alias": "off",
+      "@typescript-eslint/no-floating-promises": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-invalid-void-type": "off",
+      "@typescript-eslint/no-confusing-void-expression": "off",
       "@typescript-eslint/no-extraneous-class": "off",
+
+      "@typescript-eslint/prefer-nullish-coalescing": "off",
       "@typescript-eslint/strict-boolean-expressions": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/naming-convention": [
@@ -31,6 +35,7 @@ const configs: TSESLint.FlatConfig.ConfigArray = [
           prefix: ["T"],
         },
       ],
+
       "no-restricted-imports": [
         "error",
         {
@@ -50,8 +55,11 @@ const configs: TSESLint.FlatConfig.ConfigArray = [
       "**/node_modules/",
       "**/build/",
       "**/dist/",
+      "**/release/",
       "**/.next/",
       "**/eslint.config.*",
+      "**/.eslintrc.*",
+      "**/.prettierrc.*",
     ],
   },
 ];

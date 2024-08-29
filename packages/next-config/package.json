@@ -1,6 +1,6 @@
 {
-  "name": "@mt/eslint-next",
-  "version": "1.0.0",
+  "name": "@minimaltech/eslint-next",
+  "version": "0.0.1",
   "description": "ESLint configuration for TypeScript Next projects",
   "scripts": {
     "compile": "tsc"
@@ -18,7 +18,6 @@
     "@next/eslint-plugin-next": "^14.2.3"
   },
   "devDependencies": {
-    "@types/node": "^20.12.12",
     "tsconfigs": "5.0.0"
   },
   "peerDependencies": {

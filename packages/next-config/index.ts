@@ -1,8 +1,7 @@
 import nextPlugin from "@next/eslint-plugin-next";
-import { TSESLint } from "@typescript-eslint/utils";
 import reactPlugin from "../react-config";
 
-const configs: TSESLint.FlatConfig.ConfigArray = [
+const configs = [
   ...reactPlugin,
   {
     plugins: {

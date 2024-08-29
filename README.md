@@ -63,31 +63,30 @@ pnpm add -D \
   @next/eslint-plugin-next@^14.2.3
 ```
 
-
 ## Usage
 
 Create a `eslint.config.js` file in your project's root (or update the existing one) with the following content:
 
 - For Loopback:
 
-```javascript
-import loopbackConfig from "@mt/eslint/loopback";
+```ts
+import nodeConfs from "@minimaltech/eslint-node";
 
-export default [...loopbackConfig];
+export default [...nodeConfs];
 ```
 
 - For React:
 
-```javascript
-import reactConfig from "@mt/eslint/react";
+```ts
+import reactConfs from "@minimaltech/eslint-react";
 
-export default [...reactConfig];
+export default [...reactConfs];
 ```
 
 - For NextJS:
 
-```javascript
-import nextConfig from "@mt/eslint/next";
+```ts
+import nextConfs from "@minimaltech/eslint-next";
 
-export default [...nextConfig];
+export default [...nextConfs];
 ```

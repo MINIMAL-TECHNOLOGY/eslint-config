@@ -4,8 +4,11 @@
   "description": "ESLint configuration for React projects",
   "author": "Minimal Technology developers",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "compile": "tsc"
+    "compile": "tsc",
+    "release": "pnpm publish --no-git-check"
   },
   "dependencies": {
     "eslint-plugin-react": "^7.34.0",
@@ -23,5 +26,13 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist",
+    "!/**/tests",
+    "!/**/dist/tests",
+    "!/**/__tests__"
+  ]
 }

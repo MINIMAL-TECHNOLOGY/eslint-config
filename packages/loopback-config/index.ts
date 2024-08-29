@@ -9,7 +9,7 @@ const compat = new FlatCompat({
 
 const configs = [
   ...compat.extends("@loopback/eslint-config"),
-  commonPlugin,
+  ...commonPlugin,
   {
     rules: {
       // BASE RULES

@@ -4,8 +4,11 @@
   "description": "ESLint configuration for Next projects",
   "author": "Minimal Technology developers",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "compile": "tsc"
+    "compile": "tsc",
+    "release": "pnpm publish --no-git-check"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.3"
@@ -16,5 +19,16 @@
   },
   "peerDependencies": {
     "eslint": ">=8.57.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist",
+    "!/**/tests",
+    "!/**/dist/tests",
+    "!/**/__tests__"
+  ]
 }

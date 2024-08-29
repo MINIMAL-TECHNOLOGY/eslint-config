@@ -1,7 +1,8 @@
 {
   "name": "@minimaltech/linter",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Minimal Technology - Linter configurations",
+  "private": true,
   "keywords": [
     "eslint-config",
     "eslint",
@@ -15,24 +16,9 @@
     "node": ">=18",
     "pnpm": ">=8"
   },
-  "exports": {
-    "./common": "./dist/common/index.js",
-    "./react": "./dist/react-config/index.js",
-    "./loopback": "./dist/loopback-config/index.js",
-    "./next": "./dist/next-config/index.js"
-  },
   "scripts": {
-    "compile": "rm -rf ./dist && pnpm -r run compile"
-  },
-  "files": [
-    "README.md",
-    "LICENSE",
-    "dist",
-    "!/**/tests",
-    "!/**/dist/tests",
-    "!/**/__tests__"
-  ],
-  "publishConfig": {
-    "access": "public"
+    "compile": "rm -rf packages/*/dist && pnpm -r run compile",
+    "prerelease": "pnpm compile",
+    "release": "pnpm -r run release"
   }
 }

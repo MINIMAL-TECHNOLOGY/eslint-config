@@ -18,5 +18,8 @@
     "compile": "rm -rf ./dist && pnpm -r run compile"
   },
   "author": "Minimal Technology developers",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

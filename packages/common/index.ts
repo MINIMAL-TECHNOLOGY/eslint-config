@@ -6,7 +6,6 @@ const configs = [
     files: ["**/*.js", "**/*.ts"],
     rules: {
       // WARN
-      "@typescript-eslint/no-constant-condition": "warn",
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-floating-promises": [
         "warn",

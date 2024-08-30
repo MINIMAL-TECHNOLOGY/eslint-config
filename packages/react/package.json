@@ -1,6 +1,6 @@
 {
   "name": "@minimaltech/eslint-react",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React ESLint configuration",
   "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",

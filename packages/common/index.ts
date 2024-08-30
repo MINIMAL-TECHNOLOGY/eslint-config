@@ -93,6 +93,7 @@ const configs = [
 
       // OFF
       "prefer-promise-reject-errors": "off",
+      "@typescript-eslint/no-constant-condition": "off",
       "@typescript-eslint/no-unsafe-function-type": "off",
       "@typescript-eslint/no-invalid-this": "off",
       "@typescript-eslint/no-this-alias": "off",

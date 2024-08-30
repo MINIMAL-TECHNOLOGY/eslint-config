@@ -12,14 +12,6 @@ const configs = [
   ...commonPlugin,
   {
     rules: {
-      "@typescript-eslint/no-constant-condition": [
-        "warn",
-        {
-          checkLoops: false, // Allows constant conditions in loops
-          allowConstantLoops: true, // Specifically allows constant loops
-        },
-      ],
-
       // OFF
       "@typescript-eslint/no-inferrable-types": "off",
       "@typescript-eslint/no-misused-promises": "off",

@@ -7,14 +7,7 @@ const configs = [
     rules: {
       // WARN
       "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/no-floating-promises": [
-        "warn",
-        {
-          checkThenables: false,
-          ignoreVoid: true, // Allows ignoring promises with void
-          ignoreIIFE: true, // Allows ignoring immediately-invoked function expressions
-        },
-      ],
+      "@typescript-eslint/no-floating-promises": "off",
       "@typescript-eslint/no-shadow": "warn",
       "@typescript-eslint/no-unused-vars": [
         "warn",

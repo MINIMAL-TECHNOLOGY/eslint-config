@@ -1,6 +1,6 @@
 {
   "name": "@minimaltech/eslint-next",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Next ESLint configuration",
   "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "types": "dist/next/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "release": "pnpm publish"
+    "release": "pnpm publish --no-git-checks"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.3"

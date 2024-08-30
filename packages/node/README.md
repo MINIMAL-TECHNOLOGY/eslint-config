@@ -4,7 +4,7 @@ This repository contains the shared ESLint configuration used by the Minimal Tec
 
 ## Installation
 
-First of all, ensure that Node.js and pnpm are installed in your system. Then, run the following command to install the package:
+First of all, ensure that Node.js and pnpm are installed in your system. Then, run the following command to install the package.
 
 This command installs this package as a devDependency in your project.
 
@@ -14,7 +14,7 @@ This eslint configuration expects some `peerDependencies` to be installed in you
 You can install them using the following command:
 
 ```bash
-pnpm add -D \
+<your_package_manager> add -D \
   eslint@8.57.0 \
   prettier@3.2.5 \
   typescript@^5.0.0 \

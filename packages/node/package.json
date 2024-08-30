@@ -1,6 +1,6 @@
 {
   "name": "@minimaltech/eslint-node",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Node ESLint configuration",
   "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "types": "dist/node/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "release": "pnpm publish"
+    "release": "pnpm publish --no-git-checks"
   },
   "dependencies": {
     "@eslint/eslintrc": "^3.1.0",

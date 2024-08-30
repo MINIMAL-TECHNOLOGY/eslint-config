@@ -1,6 +1,6 @@
 {
   "name": "@minimaltech/eslint-react",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "React ESLint configuration",
   "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "types": "dist/react/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "release": "pnpm publish"
+    "release": "pnpm publish --no-git-checks"
   },
   "dependencies": {
     "eslint-plugin-react": "^7.34.0",

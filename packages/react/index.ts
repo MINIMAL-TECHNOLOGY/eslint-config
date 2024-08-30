@@ -19,10 +19,17 @@ const configs = [
     },
     languageOptions: {
       parser: tsParser,
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
+    },
+    settings: {
+      react: { version: "detect" },
     },
     rules: {
       ...reactHooksPlugin.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
+
       "no-debugger": "off",
       "no-shadow": "off",
       "no-undef": "off",
@@ -38,7 +45,6 @@ const configs = [
 
       "@typescript-eslint/ban-types": "off",
     },
-    settings: { react: { version: "detect" } },
   },
 ];
 

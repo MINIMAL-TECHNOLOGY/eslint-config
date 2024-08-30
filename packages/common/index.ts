@@ -39,6 +39,10 @@ const configs = [
               "^(T|Type|Any|Promise|Number|String|Object|Value)[A-Z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*(Type|Promise|Number|String|Object|Value|Like)$",
             match: true,
           },
+          filter: {
+            regex: "^(RootState|AppState|AppDispatch|Dispatcher)$",
+            match: false,
+          },
         },
         {
           selector: "default",
@@ -74,7 +78,9 @@ const configs = [
             "require",
             "auto",
             "enable",
+            "enabled",
             "disable",
+            "disabled",
             "activate",
             "deactivate",
           ],
@@ -93,6 +99,8 @@ const configs = [
 
       // OFF
       "prefer-promise-reject-errors": "off",
+      "no-constant-condition": "off",
+
       "@typescript-eslint/no-constant-condition": "off",
       "@typescript-eslint/no-unsafe-function-type": "off",
       "@typescript-eslint/no-invalid-this": "off",
@@ -132,6 +140,7 @@ const configs = [
   {
     ignores: [
       "**/node_modules/",
+      "**/*.d.ts",
       "**/build/",
       "**/dist/",
       "**/release/",
@@ -139,6 +148,7 @@ const configs = [
       "**/eslint.config.*",
       "**/.eslintrc.*",
       "**/.prettierrc.*",
+      "**/vite.config.*",
     ],
   },
 ];

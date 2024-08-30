@@ -14,7 +14,6 @@ const configs = [
     rules: {
       // OFF
       "@typescript-eslint/no-inferrable-types": "off",
-      "@typescript-eslint/no-constant-condition": "off",
       "@typescript-eslint/no-misused-promises": "off",
       "@typescript-eslint/ban-ts-comment": "off",
     },

@@ -1,6 +1,6 @@
 {
   "name": "@minimaltech/eslint-node",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Node ESLint configuration",
   "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",

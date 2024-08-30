@@ -6,8 +6,16 @@ const configs = [
     files: ["**/*.js", "**/*.ts"],
     rules: {
       // WARN
+      "@typescript-eslint/no-constant-condition": "warn",
       "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/no-floating-promises": "warn",
+      "@typescript-eslint/no-floating-promises": [
+        "warn",
+        {
+          checkThenables: false,
+          ignoreVoid: true, // Allows ignoring promises with void
+          ignoreIIFE: true, // Allows ignoring immediately-invoked function expressions
+        },
+      ],
       "@typescript-eslint/no-shadow": "warn",
       "@typescript-eslint/no-unused-vars": [
         "warn",
@@ -27,7 +35,11 @@ const configs = [
         {
           selector: "typeAlias",
           format: ["PascalCase"],
-          prefix: ["T", "Type"],
+          custom: {
+            regex:
+              "^(T|Type|Any|Promise|Number|String|Object|Value)[A-Z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*(Type|Promise|Number|String|Object|Value|Like)$",
+            match: true,
+          },
         },
         {
           selector: "default",
@@ -60,6 +72,12 @@ const configs = [
             "will",
             "do",
             "b",
+            "require",
+            "auto",
+            "enable",
+            "disable",
+            "activate",
+            "deactivate",
           ],
         },
         {

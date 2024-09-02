@@ -64,6 +64,8 @@ jobs:
 
           COMMIT_MESSAGE="Version| Node: $NODE_VERSION | Next: $NEXT_VERSION | React: $REACT_VERSION | Rebuild latest src"
 
+          git fetch
+          git checkout develop
           git add .
           git commit -m "$COMMIT_MESSAGE"
           git push origin develop

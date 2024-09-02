@@ -14,8 +14,8 @@
     "compile:node": "rm -rf packages/node/dist && pnpm --filter ./packages/node compile && pnpm --filter ./packages/node version",
     "compile:next": "rm -rf packages/next/dist && pnpm --filter ./packages/next compilep && pnpm --filter ./packages/next version",
     "compile:react": "rm -rf packages/react/dist && pnpm --filter ./packages/react compile && pnpm --filter ./packages/react version",
-    "release:node": "pnpm compile:node && pnpm --filter ./packages/node run release",
-    "release:next": "pnpm compile:next && pnpm --filter ./packages/next run release",
-    "release:react": "pnpm compile:react && pnpm --filter ./packages/react run release"
+    "release:node": "pnpm compile:node $RELEASE_MODE && pnpm --filter ./packages/node run release",
+    "release:next": "pnpm compile:next $RELEASE_MODE && pnpm --filter ./packages/next run release",
+    "release:react": "pnpm compile:react $RELEASE_MODE && pnpm --filter ./packages/react run release"
   }
 }

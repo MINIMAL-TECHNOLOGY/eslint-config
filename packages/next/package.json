@@ -1,6 +1,6 @@
 {
   "name": "@minimaltech/eslint-next",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Next ESLint configuration",
   "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",

@@ -39,20 +39,15 @@ jobs:
         run: |
           npm install -g pnpm
           pnpm install
-          pnpm run rebuild:${{ github.event.inputs.build_mode }}
-          date > built_generated
 
       - name: Versioning application artifact
         run: |
-          pnpm run compile:node ${{ github.event.inputs.build_mode }}
-          pnpm run compile:next ${{ github.event.inputs.build_mode }}
-          pnpm run compile:react ${{ github.event.inputs.build_mode }}
+          pnpm run release:node ${{ github.event.inputs.build_mode }}
+          pnpm run release:next ${{ github.event.inputs.build_mode }}
+          pnpm run release:react ${{ github.event.inputs.build_mode }}
 
           git add .
           git commit -m "Version: $VERSION | Rebuild latest src"
           git push origin main
-
-      - name: Publish package on NPM 📦
-        run: pnpm publish --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

@@ -1,6 +1,6 @@
 {
   "name": "@minimaltech/eslint-react",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "React ESLint configuration",
   "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",
@@ -9,7 +9,6 @@
   "scripts": {
     "compile": "tsc",
     "release": "pnpm publish --no-git-checks",
-    "release:local": "NPM_TOKEN=$(cat ./../../.npm_token) pnpm publish --no-git-checks",
     "version": "pnpm version --no-git-tag-version"
   },
   "dependencies": {

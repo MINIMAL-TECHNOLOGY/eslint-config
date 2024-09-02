@@ -11,11 +11,8 @@
   },
   "scripts": {
     "compile": "rm -rf packages/*/dist && pnpm -r run compile",
-    "compile:node": "rm -rf packages/node/dist && pnpm --filter ./packages/node compile",
-    "compile:next": "rm -rf packages/next/dist && pnpm --filter ./packages/next compile",
-    "compile:react": "rm -rf packages/react/dist && pnpm --filter ./packages/react compile",
-    "release:node": "pnpm --filter ./packages/node run release",
-    "release:next": "pnpm --filter ./packages/next run release",
-    "release:react": "pnpm --filter ./packages/react run release"
+    "release:node": "sh ./scripts/release.sh node patch",
+    "release:next": "sh ./scripts/release.sh next patch",
+    "release:react": "sh ./scripts/release.sh react patch"
   }
 }

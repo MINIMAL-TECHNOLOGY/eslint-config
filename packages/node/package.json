@@ -8,7 +8,7 @@
   "types": "dist/node/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "release": "pnpm publish --no-git-checks",
+    "release": "echo $NPM_TOKEN && pnpm publish --no-git-checks",
     "release:local": "NPM_TOKEN=$(cat ./../../.npm_token) && pnpm publish --no-git-checks",
     "version": "pnpm version --no-git-tag-version"
   },

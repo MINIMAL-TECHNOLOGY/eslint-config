@@ -58,6 +58,12 @@ jobs:
 
       - name: Patch latest version to Git
         run: |
+          NODE_VERSION=$(jq -r .version ./packages/node/package.json)
+          NEXT_VERSION=$(jq -r .version ./packages/node/package.json)
+          REACT_VERSION=$(jq -r .version ./packages/node/package.json)
+
+          COMMIT_MESSAGE="Version| Node: $NODE_VERSION | Next: $NEXT_VERSION | React: $REACT_VERSION | Rebuild latest src"
+
           git add .
-          git commit -m "Version: $VERSION | Rebuild latest src"
-          git push origin main
+          git commit -m "$COMMIT_MESSAGE"
+          git push origin develop

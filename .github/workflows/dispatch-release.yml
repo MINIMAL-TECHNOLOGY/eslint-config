@@ -42,9 +42,9 @@ jobs:
 
       - name: Versioning application artifact
         run: |
-          pnpm run release:node ${{ github.event.inputs.build_mode }}
-          pnpm run release:next ${{ github.event.inputs.build_mode }}
-          pnpm run release:react ${{ github.event.inputs.build_mode }}
+          RELEASE_MODE=${{ github.event.inputs.build_mode }} pnpm run release:node
+          RELEASE_MODE=${{ github.event.inputs.build_mode }} pnpm run release:next
+          RELEASE_MODE=${{ github.event.inputs.build_mode }} pnpm run release:react
 
           git add .
           git commit -m "Version: $VERSION | Rebuild latest src"

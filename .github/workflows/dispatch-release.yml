@@ -1,0 +1,58 @@
+name: Dispatch NPM Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_mode:
+        type: choice
+        description: Build Mode (patch | minor | major)
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.16.0"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Setup Git
+        run: |
+          git config user.name "mt-ci gh-action"
+          git config user.email "mt-ci@gh-action.none"
+          git config advice.addIgnoredFile false
+          git config advice.detachedHead false
+
+      - name: Verify build_mode
+        run: |
+          echo "mt-ci build_mode: ${{ github.event.inputs.build_mode }}"
+
+      - name: Install dependencies and build 🔧
+        run: |
+          npm install -g pnpm
+          pnpm install
+          pnpm run rebuild:${{ github.event.inputs.build_mode }}
+          date > built_generated
+
+      - name: Versioning application artifact
+        run: |
+          pnpm run compile:node ${{ github.event.inputs.build_mode }}
+          pnpm run compile:next ${{ github.event.inputs.build_mode }}
+          pnpm run compile:react ${{ github.event.inputs.build_mode }}
+
+          git add .
+          git commit -m "Version: $VERSION | Rebuild latest src"
+          git push origin main
+
+      - name: Publish package on NPM 📦
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

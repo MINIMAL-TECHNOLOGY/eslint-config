@@ -32,7 +32,7 @@ echo "Publishing $module"
 cd packages/$module
 pnpm publish --no-git-check
 
-PACKAGE_PATH="packages/$module/package.json"
+PACKAGE_PATH="./package.json"
 VERSION=$(jq -r .version $PACKAGE_PATH)
 
 git fetch

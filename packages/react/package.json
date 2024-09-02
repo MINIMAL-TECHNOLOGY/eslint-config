@@ -8,7 +8,8 @@
   "types": "dist/react/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "release": "pnpm publish --no-git-checks"
+    "release": "pnpm publish --no-git-checks",
+    "version": "pnpm version --no-git-tag-version"
   },
   "dependencies": {
     "eslint-plugin-react": "^7.34.0",

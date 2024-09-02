@@ -8,7 +8,8 @@
   "types": "dist/next/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "release": "pnpm publish --no-git-checks"
+    "release": "pnpm publish --no-git-checks",
+    "version": "pnpm version --no-git-tag-version"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.3"

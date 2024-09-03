@@ -68,7 +68,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 
       - name: Push latest version to repository
-        uses: actions/checkout@v4
         run: |
           pwd
           module=${{ github.event.inputs.module }}

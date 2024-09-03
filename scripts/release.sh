@@ -9,19 +9,24 @@ case "$module" in
     ;;
   *)
     echo "Invalid module to release | Valids: [node|next|react]"
+    exit 1
     ;;
 esac
 
 echo "Cleaning up release folder"
 rm -rf packages/$module/dist
 
-provision_opt=$2
-case "$provision_opt" in
+build_mode=$2
+case "$build_mode" in
+  "patch"|"minor"|"major")
+    pnpm --filter "{packages/$module}" version $build_mode
+    ;;
   "no-version")
     echo "No versioning for current build!"
     ;;
   *)
-    pnpm --filter "{packages/$module}" version $provision_opt
+    echo "Invalid build_mode to release | Valids: [patch|minor|major]"
+    exit 2
     ;;
 esac
 

@@ -1,0 +1,86 @@
+name: Dispatch NPM Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      module:
+        type: choice
+        description: Build Mode (node | next | react)
+        options:
+          - node
+          - next
+          - react
+
+      build_mode:
+        type: choice
+        description: Build Mode (patch | minor | major)
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.16.0"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Setup Git
+        run: |
+          git config user.name "mt-ci gh-action"
+          git config user.email "mt-ci@gh-action.none"
+
+      - name: Verify module + build_mode
+        run: |
+          echo "Module: ${{ github.event.inputs.module }}"
+          echo "Build mode: ${{ github.event.inputs.build_mode }}"
+
+      - name: Install dependencies 🔧
+        run: |
+          npm install -g pnpm
+          pnpm install
+
+      - name: Building + Versioning application artifact
+        run: |
+          module=${{ github.event.inputs.module }}
+          provision_opt=${{ github.event.inputs.build_mode }}
+          echo "Module: $module | Build mode: $provision_opt"
+
+          echo "Cleaning up release folder"
+          rm -rf packages/$module/dist
+
+          echo "Compiling $module"
+          pnpm --filter "{packages/$module}" run compile
+
+          echo "Versioning release folder"
+          pnpm --filter "{packages/$module}" version $provision_opt
+
+      - name: Publish package on NPM 📦
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+
+      - name: Push latest version to repository
+        uses: actions/checkout@v4
+        run: |
+          pwd
+          module=${{ github.event.inputs.module }}
+          PACKAGE_PATH="./packages/$module/package.json"
+          VERSION=$(jq -r .version $PACKAGE_PATH)
+
+          git fetch
+          git checkout develop
+          git add .
+          git commit -m "Module: $module | Version: $VERSION | Release latest src"
+          git push origin develop
+          git checkout main
+
+          git merge develop
+          git push origin main

@@ -19,6 +19,10 @@ on:
           - minor
           - major
 
+env:
+  MODULE: ${{ github.event.inputs.module }}
+  BUILD_MODE: ${{ github.event.inputs.build_mode }}
+
 jobs:
   build-release:
     runs-on: ubuntu-latest
@@ -37,10 +41,9 @@ jobs:
           git config user.name "mt-ci gh-action"
           git config user.email "mt-ci@gh-action.none"
 
-      - name: Verify module + build_mode
+      - name: Verify Module + Build mode
         run: |
-          echo "Module: ${{ github.event.inputs.module }}"
-          echo "Build mode: ${{ github.event.inputs.build_mode }}"
+          echo "mt-ci | Module: $MODULE | Build mode: $BUILD_MODE"
 
       - name: Install dependencies 🔧
         run: |
@@ -49,33 +52,28 @@ jobs:
 
       - name: Building + Versioning application artifact
         run: |
-          module=${{ github.event.inputs.module }}
-          provision_opt=${{ github.event.inputs.build_mode }}
-          echo "Module: $module | Build mode: $provision_opt"
+          echo "Module: $MODULE | Build mode: $BUILD_MODE"
 
           echo "Cleaning up release folder"
-          rm -rf packages/$module/dist
+          rm -rf packages/$MODULE/dist
 
-          echo "Compiling $module"
-          pnpm --filter "{packages/$module}" run compile
+          echo "Compiling $MODULE"
+          pnpm --filter "{packages/$MODULE}" compile
 
           echo "Versioning release folder"
-          pnpm --filter "{packages/$module}" version $provision_opt
+          pnpm --filter "{packages/$MODULE}" version $BUILD_MODE
 
       - name: Publish package on NPM 📦
         run: |
-          pwd
-          module=${{ github.event.inputs.module }}
-          cd packages/$module
+          cd packages/$MODULE
           pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 
       - name: Push latest version to repository
         run: |
-          pwd
           module=${{ github.event.inputs.module }}
-          cd packages/$module
+          cd packages/$MODULE
 
           PACKAGE_PATH="./package.json"
           VERSION=$(jq -r .version $PACKAGE_PATH)
@@ -83,7 +81,7 @@ jobs:
           git fetch
           git checkout develop
           git add .
-          git commit -m "Module: $module | Version: $VERSION | Release latest src"
+          git commit -m "Module: $MODULE | Build mode: $BUILD_MODE | Version: $VERSION | Release latest src"
           git push origin develop
 
           git checkout main

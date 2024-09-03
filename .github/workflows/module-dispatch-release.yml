@@ -85,7 +85,7 @@ jobs:
           git add .
           git commit -m "Module: $module | Version: $VERSION | Release latest src"
           git push origin develop
-          git checkout main
 
-          git merge develop
+          git checkout main
+          git merge --allow-unrelated-histories develop
           git push origin main

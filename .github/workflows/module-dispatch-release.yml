@@ -63,7 +63,11 @@ jobs:
           pnpm --filter "{packages/$module}" version $provision_opt
 
       - name: Publish package on NPM 📦
-        run: pnpm publish --no-git-checks
+        run: |
+          pwd
+          module=${{ github.event.inputs.module }}
+          cd packages/$module
+          pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 
@@ -71,7 +75,9 @@ jobs:
         run: |
           pwd
           module=${{ github.event.inputs.module }}
-          PACKAGE_PATH="./packages/$module/package.json"
+          cd packages/$module
+
+          PACKAGE_PATH="./package.json"
           VERSION=$(jq -r .version $PACKAGE_PATH)
 
           git fetch

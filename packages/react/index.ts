@@ -1,21 +1,22 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import commonPlugin from "@minimaltech/eslint-common";
+
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
 
 const compat = new FlatCompat({
-  recommendedConfig: js.configs.recommended,
+  recommendedConfig: js.configs.recommended ,
   allConfig: js.configs.all,
 });
 
 const configs = [
-  ...compat.extends("eslint-plugin-react").configs.flat.recommended,
-  compat.extends("eslint-plugin-react-hooks").configs.recommended,
+  ...compat.extends('plugin:eslint-plugin-react/recommended'),
+  ...compat.extends('plugin:eslint-plugin-react-hooks/recommended'),
   ...commonPlugin,
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
     plugins: {
-      'react-refresh': reactRefreshPlugin,
+      "react-refresh": reactRefreshPlugin,
     },
     settings: {
       react: { version: "detect" },

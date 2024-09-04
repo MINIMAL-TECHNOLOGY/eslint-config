@@ -10,6 +10,6 @@ const compat = new FlatCompat({
 const configs = [
   compat.extends("@next/eslint-plugin-next").configs.recommended,
   ...reactPlugin,
-  ];
+];
 
 export = configs

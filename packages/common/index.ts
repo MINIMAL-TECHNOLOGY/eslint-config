@@ -1,5 +1,5 @@
 import prettierRecommended from "eslint-plugin-prettier/recommended";
-import tsParser from "@typescript-eslint/parser";
+import * as tsParser from "@typescript-eslint/parser";
 
 const configs = [
   prettierRecommended,

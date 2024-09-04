@@ -14,17 +14,7 @@ This eslint configuration expects some `peerDependencies` to be installed in you
 You can install them using the following command:
 
 ```bash
-<your_package_manager> add -D \
-  eslint@8.57.0 \
-  prettier@3.2.5 \
-  typescript@^5.0.0 \
-  typescript-eslint@^7.11.0 \
-  eslint-config-prettier@^9.1.0 \
-  eslint-plugin-prettier@5.1.3 \
-  eslint-plugin-react@^7.34.0 \
-  eslint-plugin-react-hooks@^4.6.2 \
-  eslint-plugin-react-refresh@^0.4.5 \
-  @next/eslint-plugin-next@^14.2.3
+pnpm add -D eslint@8.57.0 prettier typescript@^5.0.0
 ```
 
 ## Usage

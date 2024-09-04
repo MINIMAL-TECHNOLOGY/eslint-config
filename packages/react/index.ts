@@ -1,22 +1,15 @@
-import reactRecommended from "eslint-plugin-react";
-import reactHooksRecommended from "eslint-plugin-react-hooks";
+import reactPlugin from "eslint-plugin-react";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
 
-import { parser as tsParser } from "typescript-eslint";
 import commonPlugin from "../common";
 
 const configs = [
   ...commonPlugin,
-  reactRecommended.configs.recommended,
-  reactHooksRecommended.configs.recommended,
+  reactPlugin.configs.recommended,
+  reactHooksPlugin.configs.recommended,
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
     plugins: ['react', 'react-refresh', 'react-hooks'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
     settings: {
       react: { version: "detect" },
     },
@@ -38,7 +31,5 @@ const configs = [
     },
   },
 ];
-
-console.log(configs)
 
 export = configs;

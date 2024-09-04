@@ -1,9 +1,23 @@
 import prettierRecommended from "eslint-plugin-prettier/recommended";
+import tsParser from "@typescript-eslint/parser";
 
 const configs = [
   prettierRecommended,
   {
-    files: ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx"],
+    files: [
+      "**/*.js",
+      "**/*.cjs",
+      "**/*.mjs",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx",
+    ],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
+    },
     rules: {
       // WARN
       "@typescript-eslint/no-explicit-any": "warn",

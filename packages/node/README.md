@@ -14,13 +14,7 @@ This eslint configuration expects some `peerDependencies` to be installed in you
 You can install them using the following command:
 
 ```bash
-<your_package_manager> add -D \
-  eslint@8.57.0 \
-  prettier@3.2.5 \
-  typescript@^5.0.0 \
-  @loopback/eslint-config@15.0.2 \
-  eslint-plugin-prettier@5.1.3 \
-  eslint-config-prettier@^9.1.0
+pnpm add -D eslint@8.57.0 prettier typescript
 ```
 
 ## Usage

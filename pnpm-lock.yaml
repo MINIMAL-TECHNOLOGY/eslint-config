@@ -38,6 +38,12 @@ importers:
 
   packages/next:
     dependencies:
+      '@miminaltech/eslint-common':
+        specifier: file://../common
+        version: link:../common
+      '@miminaltech/eslint-react':
+        specifier: file://../react
+        version: link:../react
       '@next/eslint-plugin-next':
         specifier: ^14.2.3
         version: 14.2.7
@@ -60,6 +66,9 @@ importers:
       '@loopback/eslint-config':
         specifier: ^15.0.4
         version: 15.0.4(eslint@8.57.0)(typescript@5.5.4)
+      '@miminaltech/eslint-common':
+        specifier: file://../common
+        version: link:../common
     devDependencies:
       '@types/node':
         specifier: ^20.16.2
@@ -70,9 +79,9 @@ importers:
 
   packages/react:
     dependencies:
-      '@typescript-eslint/parser':
-        specifier: ^8.4.0
-        version: 8.4.0(eslint@8.57.0)(typescript@5.5.4)
+      '@miminaltech/eslint-common':
+        specifier: file://../common
+        version: link:../common
       eslint-plugin-react:
         specifier: ^7.34.0
         version: 7.35.2(eslint@8.57.0)

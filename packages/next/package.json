@@ -12,6 +12,8 @@
     "version": "pnpm version --no-git-tag-version"
   },
   "dependencies": {
+    "@miminaltech/eslint-common": "file://../common",
+    "@miminaltech/eslint-react": "file://../react",
     "@next/eslint-plugin-next": "^14.2.3"
   },
   "devDependencies": {

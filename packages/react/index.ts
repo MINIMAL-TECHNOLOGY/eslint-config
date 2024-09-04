@@ -1,8 +1,7 @@
+import commonPlugin from "@miminaltech/eslint-common";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
-
-import commonPlugin from "../common";
 
 const configs = [
   ...commonPlugin,

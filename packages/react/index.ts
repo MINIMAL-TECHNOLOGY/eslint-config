@@ -2,7 +2,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import commonPlugin from "@minimaltech/eslint-common";
 
-import reactRefreshPlugin from "eslint-plugin-react-refresh";
+import * as reactRefreshPlugin from "eslint-plugin-react-refresh";
 
 const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,
@@ -14,10 +14,18 @@ const configs = [
   ...compat.extends('plugin:eslint-plugin-react-hooks/recommended'),
   ...commonPlugin,
   {
-    files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
     plugins: {
       "react-refresh": reactRefreshPlugin,
     },
+    rules: {
+      "react-refresh/only-export-components": [
+        "off",
+        { allowConstantExport: true },
+      ],
+    }
+  },
+  {
+    files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
     settings: {
       react: { version: "detect" },
     },
@@ -28,10 +36,6 @@ const configs = [
 
       "react-hooks/rules-of-hooks": "warn",
       "react-hooks/exhaustive-deps": "error",
-      "react-refresh/only-export-components": [
-        "off",
-        { allowConstantExport: true },
-      ],
       "react/jsx-boolean-value": "error",
       "react/react-in-jsx-scope": "off",
 

@@ -39,3 +39,9 @@ const configs = [
 
 export default configs;
 ```
+
+Lint command:
+
+```bash
+eslint --report-unused-disable-directives .
+```

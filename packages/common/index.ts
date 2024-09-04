@@ -1,7 +1,10 @@
 import prettierRecommended from "eslint-plugin-prettier/recommended";
-import * as tsParser from "@typescript-eslint/parser";
+import eslint from "@eslint/js";
+import tsEslint from "typescript-eslint";
 
-const configs = [
+const configs: ReturnType<typeof tsEslint.config> = [
+  eslint.configs.recommended,
+  ...tsEslint.configs.recommended,
   prettierRecommended,
   {
     files: [
@@ -12,12 +15,12 @@ const configs = [
       "**/*.ts",
       "**/*.tsx",
     ],
-    languageOptions: {
+    /* languageOptions: {
       parser: tsParser,
       parserOptions: {
         project: "./tsconfig.json",
       },
-    },
+    }, */
     rules: {
       // WARN
       "@typescript-eslint/no-explicit-any": "warn",
@@ -161,5 +164,7 @@ const configs = [
     ],
   },
 ];
+
+console.log(configs);
 
 export = configs;

@@ -1,5 +1,6 @@
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
+import reactRefreshPlugin from "eslint-plugin-react-refresh";
 
 import commonPlugin from "../common";
 
@@ -9,7 +10,10 @@ const configs = [
   reactHooksPlugin.configs.recommended,
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
-    plugins: ['react', 'react-refresh', 'react-hooks'],
+    plugins: {
+      'react-hooks': reactHooksPlugin,
+      'react-refresh': reactRefreshPlugin,
+    },
     settings: {
       react: { version: "detect" },
     },

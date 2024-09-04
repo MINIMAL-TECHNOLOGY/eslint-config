@@ -4,8 +4,8 @@
   "description": "React ESLint configuration",
   "author": "Minimal Technology <developer@miminaltek.com>",
   "license": "MIT",
-  "main": "dist/react/index.js",
-  "types": "dist/react/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "compile": "tsc",
     "release": "pnpm publish --no-git-checks",

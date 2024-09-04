@@ -2,7 +2,7 @@
   "name": "@minimaltech/eslint-node",
   "version": "0.1.6",
   "description": "Node ESLint configuration",
-  "author": "Minimal Technology <developer@miminaltek.com>",
+  "author": "Minimal Technology <developer@minimaltek.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "version": "pnpm version --no-git-tag-version"
   },
   "dependencies": {
-    "@miminaltech/eslint-common": "latest",
+    "@minimaltech/eslint-common": "latest",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.9.1",
     "@loopback/eslint-config": "^15.0.4"

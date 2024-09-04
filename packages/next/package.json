@@ -2,7 +2,7 @@
   "name": "@minimaltech/eslint-next",
   "version": "0.1.4",
   "description": "Next ESLint configuration",
-  "author": "Minimal Technology <developer@miminaltek.com>",
+  "author": "Minimal Technology <developer@minimaltek.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,8 +12,8 @@
     "version": "pnpm version --no-git-tag-version"
   },
   "dependencies": {
-    "@miminaltech/eslint-common": "latest",
-    "@miminaltech/eslint-react": "latest",
+    "@minimaltech/eslint-common": "latest",
+    "@minimaltech/eslint-react": "latest",
     "@next/eslint-plugin-next": "^14.2.3"
   },
   "devDependencies": {

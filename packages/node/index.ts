@@ -1,6 +1,6 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
-import commonPlugin from "@miminaltech/eslint-common";
+import commonPlugin from "@minimaltech/eslint-common";
 
 const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,

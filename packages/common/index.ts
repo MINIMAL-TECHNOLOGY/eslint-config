@@ -4,7 +4,6 @@ import tsEslint from "typescript-eslint";
 
 const configs: ReturnType<typeof tsEslint.config> = [
   eslint.configs.recommended,
-  ...tsEslint.configs.recommended,
   prettierRecommended,
   {
     files: [

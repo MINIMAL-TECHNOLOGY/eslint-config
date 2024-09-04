@@ -9,9 +9,9 @@ const compat = new FlatCompat({
 });
 
 const configs = [
-  ...commonPlugin,
   ...compat.extends("eslint-plugin-react/recommended"),
   compat.extends("eslint-plugin-react-hooks").configs.recommended,
+  ...commonPlugin,
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
     plugins: {

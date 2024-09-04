@@ -5,7 +5,7 @@ import commonPlugin from "@minimaltech/eslint-common";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
 
 const compat = new FlatCompat({
-  recommendedConfig: js.configs.recommended ,
+  recommendedConfig: js.configs.recommended,
   allConfig: js.configs.all,
 });
 

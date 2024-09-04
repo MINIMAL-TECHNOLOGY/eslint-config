@@ -43,7 +43,7 @@ importers:
     dependencies:
       '@minimaltech/eslint-react':
         specifier: latest
-        version: 0.1.7(eslint@8.57.0)
+        version: 0.1.8(eslint@8.57.0)
       '@next/eslint-plugin-next':
         specifier: ^14.2.3
         version: 14.2.7
@@ -71,7 +71,7 @@ importers:
         version: 15.0.4(eslint@8.57.0)(typescript@5.5.4)
       '@minimaltech/eslint-common':
         specifier: latest
-        version: 0.0.3(@types/eslint@9.6.1)
+        version: 0.0.4(@types/eslint@9.6.1)
     devDependencies:
       '@types/node':
         specifier: ^20.16.2
@@ -84,7 +84,7 @@ importers:
     dependencies:
       '@minimaltech/eslint-common':
         specifier: latest
-        version: 0.0.3(@types/eslint@9.6.1)
+        version: 0.0.4(@types/eslint@9.6.1)
       eslint-plugin-react:
         specifier: ^7.34.0
         version: 7.35.2(eslint@8.57.0)
@@ -156,11 +156,11 @@ packages:
     peerDependencies:
       eslint: ^8.57.0
 
-  '@minimaltech/eslint-common@0.0.3':
-    resolution: {integrity: sha512-QfHdZwZ4lVePz3B8j1ahWHjAmqKsg9JKWSLK/LaJyHdWCmC2Sh7AbPYnwmqAx33uCB0g+ejOK7cga5j2uf/M4g==}
+  '@minimaltech/eslint-common@0.0.4':
+    resolution: {integrity: sha512-5dLJKcE6SfWSkCt/Ef7g6n9wXMVal4CawWwEwsyULhYX0vjTpzwGQnlgBBrb5VYHQFE/o8YB+95zB4/gCTEuhg==}
 
-  '@minimaltech/eslint-react@0.1.7':
-    resolution: {integrity: sha512-nEGcW1vcRi8CqUEK0eXaCE/tso0fiyl06JrlDgc8W5130cifFspgnmcmhq5oS4SM+m5GVMPtPhAEom8FFOvt/w==}
+  '@minimaltech/eslint-react@0.1.8':
+    resolution: {integrity: sha512-usOY13rFhe4L0yWQJAwrr8nCDDuwGTW+UM+ApfnYYMV+GSBT0cRt+cPOdmGILwd6/8hpwS50iRgurh2ubQ4F+g==}
 
   '@next/eslint-plugin-next@14.2.7':
     resolution: {integrity: sha512-+7xh142AdhZGjY9/L0iFo7mqRBMJHe+q+uOL+hto1Lfo9DeWCGcR6no4StlFbVSVcA6fQLKEX6y6qhMsSKbgNQ==}
@@ -1325,7 +1325,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@minimaltech/eslint-common@0.0.3(@types/eslint@9.6.1)':
+  '@minimaltech/eslint-common@0.0.4(@types/eslint@9.6.1)':
     dependencies:
       '@typescript-eslint/parser': 8.4.0(eslint@8.57.0)(typescript@5.5.4)
       eslint: 8.57.0
@@ -1337,9 +1337,9 @@ snapshots:
       - '@types/eslint'
       - supports-color
 
-  '@minimaltech/eslint-react@0.1.7(eslint@8.57.0)':
+  '@minimaltech/eslint-react@0.1.8(eslint@8.57.0)':
     dependencies:
-      '@minimaltech/eslint-common': 0.0.3(@types/eslint@9.6.1)
+      '@minimaltech/eslint-common': 0.0.4(@types/eslint@9.6.1)
       eslint-plugin-react: 7.35.2(eslint@8.57.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.57.0)
       eslint-plugin-react-refresh: 0.4.11(eslint@8.57.0)

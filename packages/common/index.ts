@@ -112,6 +112,8 @@ const configs: ReturnType<typeof tsEslint.config> = [
       // OFF
       "prefer-promise-reject-errors": "off",
       "no-constant-condition": "off",
+      "no-undef": "off",
+      "no-unused-vars": "off",
 
       "@typescript-eslint/no-constant-condition": "off",
       "@typescript-eslint/no-unsafe-function-type": "off",

@@ -10,6 +10,7 @@
     "pnpm": ">=8"
   },
   "scripts": {
+    "deps-clean": "rm -rf ./pnpm-lock.yaml ./node_modules ./packages*/node_modules ./packages/*/dist",
     "compile": "rm -rf packages/*/dist && pnpm -r run compile",
     "release:common": "sh ./scripts/release.sh common",
     "release:node": "sh ./scripts/release.sh node",

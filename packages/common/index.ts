@@ -13,14 +13,15 @@ const configs: ReturnType<typeof tsEslint.config> = [
       "**/*.mjs",
       "**/*.jsx",
       "**/*.ts",
+      "**/*.cts",
+      "**/*.mts",
       "**/*.tsx",
     ],
-    /* languageOptions: {
-      parser: tsParser,
+    languageOptions: {
       parserOptions: {
         project: "./tsconfig.json",
       },
-    }, */
+    },
     rules: {
       // WARN
       "@typescript-eslint/no-explicit-any": "warn",
@@ -164,7 +165,5 @@ const configs: ReturnType<typeof tsEslint.config> = [
     ],
   },
 ];
-
-console.log(configs);
 
 export = configs;

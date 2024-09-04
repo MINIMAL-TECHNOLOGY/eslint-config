@@ -46,6 +46,4 @@ const configs = [
   },
 ];
 
-console.log(configs);
-
 export = configs;

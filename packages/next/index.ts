@@ -1,4 +1,6 @@
 import nextPlugin from "@next/eslint-plugin-next";
 import reactPlugin from "@minimaltech/eslint-react";
 
-export const configs = [...reactPlugin, nextPlugin.configs.recommended];
+const configs = [...reactPlugin, nextPlugin.configs.recommended];
+
+export = configs

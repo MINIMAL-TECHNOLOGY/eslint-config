@@ -22,5 +22,16 @@
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.16.2",
     "tsconfigs": "5.0.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist",
+    "!/**/tests",
+    "!/**/dist/tests",
+    "!/**/__tests__"
+  ]
 }

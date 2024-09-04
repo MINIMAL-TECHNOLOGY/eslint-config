@@ -4,7 +4,7 @@ module=$1
 echo "START | Releasing module $module"
 
 case "$module" in
-  "node"|"next"|"react")
+  "common"|"node"|"next"|"react")
     echo "RELEASE module: $module"
     ;;
   *)

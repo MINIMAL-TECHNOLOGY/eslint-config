@@ -5,8 +5,9 @@ on:
     inputs:
       module:
         type: choice
-        description: Build Mode (node | next | react)
+        description: Build Mode (common | node | next | react)
         options:
+          - common
           - node
           - next
           - react

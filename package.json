@@ -11,6 +11,7 @@
   },
   "scripts": {
     "compile": "rm -rf packages/*/dist && pnpm -r run compile",
+    "release:common": "sh ./scripts/release.sh common",
     "release:node": "sh ./scripts/release.sh node",
     "release:next": "sh ./scripts/release.sh next",
     "release:react": "sh ./scripts/release.sh react"

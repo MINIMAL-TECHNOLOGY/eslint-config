@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "nodenext",
-    "moduleResolution": "nodenext"
+    "moduleResolution": "nodenext",
+    "noImplicitAny": false
   },
   "include": [
     "./index.ts",

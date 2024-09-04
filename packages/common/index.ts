@@ -1,7 +1,7 @@
-import prettierPlugin from "eslint-plugin-prettier/recommended";
+import prettierRecommended from "eslint-plugin-prettier/recommended";
 
 const configs = [
-  prettierPlugin,
+  prettierRecommended,
   {
     files: ["**/*.js", "**/*.ts"],
     rules: {

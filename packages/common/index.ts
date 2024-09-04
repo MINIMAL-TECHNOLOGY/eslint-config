@@ -3,7 +3,7 @@ import prettierRecommended from "eslint-plugin-prettier/recommended";
 const configs = [
   prettierRecommended,
   {
-    files: ["**/*.js", "**/*.ts"],
+    files: ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx"],
     rules: {
       // WARN
       "@typescript-eslint/no-explicit-any": "warn",

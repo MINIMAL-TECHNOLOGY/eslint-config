@@ -8,7 +8,7 @@ const compat = new FlatCompat({
 });
 
 const configs = [
-  compat.extends("@next/eslint-plugin-next").configs.recommended,
+  ...compat.extends("plugin:@next/eslint-plugin-next/recommended"),
   ...reactPlugin,
 ];
 

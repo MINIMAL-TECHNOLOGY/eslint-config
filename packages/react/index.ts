@@ -1,6 +1,7 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import commonPlugin from "@minimaltech/eslint-common";
+import tsEslint from "typescript-eslint";
 
 import * as reactRefreshPlugin from "eslint-plugin-react-refresh";
 
@@ -10,8 +11,9 @@ const compat = new FlatCompat({
 });
 
 const configs = [
-  ...compat.extends('plugin:eslint-plugin-react/recommended'),
-  ...compat.extends('plugin:eslint-plugin-react-hooks/recommended'),
+  ...tsEslint.configs.recommended,
+  ...compat.extends("plugin:eslint-plugin-react/recommended"),
+  ...compat.extends("plugin:eslint-plugin-react-hooks/recommended"),
   ...commonPlugin,
   {
     plugins: {
@@ -22,7 +24,7 @@ const configs = [
         "off",
         { allowConstantExport: true },
       ],
-    }
+    },
   },
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
@@ -44,6 +46,6 @@ const configs = [
   },
 ];
 
-console.log(configs)
+console.log(configs);
 
 export = configs;

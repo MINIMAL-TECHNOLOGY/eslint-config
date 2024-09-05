@@ -36,6 +36,7 @@ const configs = [
       "no-shadow": "off",
       "no-undef": "off",
 
+      "react/prop-types": "off",
       "react-hooks/rules-of-hooks": "warn",
       "react-hooks/exhaustive-deps": "error",
       "react/jsx-boolean-value": "error",
@@ -43,6 +44,9 @@ const configs = [
 
       "@typescript-eslint/ban-types": "off",
     },
+  },
+  {
+    ignores: ["**/vite.config.*"],
   },
 ];
 

@@ -158,11 +158,9 @@ const configs: ReturnType<typeof tsEslint.config> = [
       "**/build/",
       "**/dist/",
       "**/release/",
-      "**/.next/",
       "**/eslint.config.*",
       "**/.eslintrc.*",
       "**/.prettierrc.*",
-      "**/vite.config.*",
     ],
   },
 ];

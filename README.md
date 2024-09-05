@@ -14,11 +14,11 @@ This command installs this package as a devDependency in your project.
 
 ### Setup
 
-This eslint configuration expects some `peerDependencies` to be installed in your project. Please ensure that you have them installed as devDependency.
+This eslint configuration expects some `peerDependencies` or `devDependencies` to be installed in your project. Please ensure that you have them installed as devDependency.
 You can install them using the following command:
 
 ```bash
-pnpm add -D eslint@8.57.0 prettier typescript
+pnpm add -D eslint@^8.57.0 prettier typescript
 ```
 
 ## Usage

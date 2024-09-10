@@ -79,6 +79,8 @@ const configs: ReturnType<typeof tsEslint.config> = [
             "b",
             "do",
             "is",
+            "re",
+            "rs",
             "has",
             "use",
             "can",

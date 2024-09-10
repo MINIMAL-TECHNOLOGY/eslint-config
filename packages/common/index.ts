@@ -1,5 +1,5 @@
-import prettierRecommended from "eslint-plugin-prettier/recommended";
 import eslint from "@eslint/js";
+import prettierRecommended from "eslint-plugin-prettier/recommended";
 import tsEslint from "typescript-eslint";
 
 const configs: ReturnType<typeof tsEslint.config> = [
@@ -87,7 +87,11 @@ const configs: ReturnType<typeof tsEslint.config> = [
             "did",
             "auto",
             "will",
+            "with",
+            "force",
             "should",
+            "error",
+            "success",
             "require",
             "enabled",
             "enable",

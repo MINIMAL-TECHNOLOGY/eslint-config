@@ -35,12 +35,17 @@ const configs = [
   ...normalizeReactConfs(),
   {
     rules: {
+      'import/default': 'off',
+      'import/namespace': 'off',
+      'import/no-default-export': 'off',
+      'import/no-named-export': 'off',
+
       '@typescript-eslint/no-require-imports': 'off',
     },
   },
   {
     ignores: ['scripts/**/*', 'assets/**/*'],
   },
-];
+].filter(conf => Object.keys(conf).length);
 
 export = configs;

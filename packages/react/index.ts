@@ -53,6 +53,6 @@ const configs = [
   {
     ignores: ["**/vite.config.*"],
   },
-];
+].filter((conf) => Object.keys(conf).length);
 
 export = configs;

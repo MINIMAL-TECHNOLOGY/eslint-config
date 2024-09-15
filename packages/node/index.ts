@@ -18,6 +18,6 @@ const configs = [
       "@typescript-eslint/ban-ts-comment": "off",
     },
   },
-];
+].filter((conf) => Object.keys(conf).length);
 
 export = configs;

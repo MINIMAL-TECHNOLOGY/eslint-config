@@ -5,12 +5,12 @@ on:
     inputs:
       module:
         type: choice
-        description: Build Mode (common|node|next|react|react-native)
+        description: Build Mode (common|node|react|next|react-native)
         options:
           - common
           - node
-          - next
           - react
+          - next
           - react-native
 
       build_mode:

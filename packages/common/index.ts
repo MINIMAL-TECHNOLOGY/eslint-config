@@ -2,6 +2,15 @@ import eslint from "@eslint/js";
 import prettierRecommended from "eslint-plugin-prettier/recommended";
 import tsEslint from "typescript-eslint";
 
+const VALID_NAMING_TYPES = [
+  "RootState",
+  "AppState",
+  "AppDispatch",
+  "Dispatcher",
+  "Prop",
+  "Props",
+].join("|");
+
 const configs: ReturnType<typeof tsEslint.config> = [
   eslint.configs.recommended,
   prettierRecommended,
@@ -50,7 +59,7 @@ const configs: ReturnType<typeof tsEslint.config> = [
             match: true,
           },
           filter: {
-            regex: "^(RootState|AppState|AppDispatch|Dispatcher)$",
+            regex: `^(${VALID_NAMING_TYPES})[A-Z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*(${VALID_NAMING_TYPES})$`,
             match: false,
           },
         },
@@ -143,7 +152,7 @@ const configs: ReturnType<typeof tsEslint.config> = [
             {
               name: "lodash",
               message:
-                "Please import 'nameFunc' from 'lodash/nameFunc' instead of lodash",
+                "Please import 'fn' from 'lodash/fn' instead of * from lodash | Ex: import get from 'lodash/get'",
             },
           ],
         },

@@ -6,8 +6,9 @@ This repository contains the shared ESLint configuration used by the Minimal Tec
 
 First of all, ensure that Node.js and pnpm are installed in your system. Then, run the following command to install the package:
 
+
 ```
-pnpm add -D @minimaltech/eslint-{node|next|react|react-native}
+pnpm add -D @minimaltech/eslint-react-native
 ```
 
 This command installs this package as a devDependency in your project.
@@ -26,9 +27,7 @@ pnpm add -D eslint@^8.57.0 prettier typescript
 Create a `eslint.config.*` file in your project's root (or update the existing one) with the following content:
 
 ```ts
-// Import the configs that required for your project,
-// Choose one of [eslint-node, eslint-react, eslint-next | eslint-react-native] to import
-import confs from "@minimaltech/eslint-{node|next|react|react-native}";
+import confs from "@minimaltech/eslint-react-native";
 
 const configs = [
   ...confs,
@@ -38,10 +37,4 @@ const configs = [
 ];
 
 export default configs;
-```
-
-Lint command:
-
-```bash
-eslint --report-unused-disable-directives .
 ```

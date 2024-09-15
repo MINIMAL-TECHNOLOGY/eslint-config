@@ -1,0 +1,34 @@
+{
+  "name": "@minimaltech/eslint-react-native",
+  "version": "0.0.1",
+  "description": "React Native ESLint configuration",
+  "author": "Minimal Technology <developer@minimaltek.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "tsc",
+    "release": "pnpm publish --no-git-checks",
+    "version": "pnpm version --no-git-tag-version"
+  },
+  "dependencies": {
+    "@minimaltech/eslint-react": "latest",
+    "eslint-config-expo": "^7.1.2",
+    "typescript": ">=4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.2",
+    "tsconfigs": "5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist",
+    "!/**/tests",
+    "!/**/dist/tests",
+    "!/**/__tests__"
+  ]
+}

@@ -4,11 +4,11 @@ module=$1
 echo "START | Releasing module $module"
 
 case "$module" in
-  "common"|"node"|"next"|"react")
+  "common"|"node"|"next"|"react"|"react-native")
     echo "RELEASE module: $module"
     ;;
   *)
-    echo "Invalid module to release | Valids: [node|next|react]"
+    echo "Invalid module to release | Valids: [node|next|react|react-native]"
     exit 1
     ;;
 esac

@@ -13,6 +13,6 @@ const configs = [
   {
     ignores: ["**/.next/", "**/next.config.*"],
   },
-];
+].filter((conf) => Object.keys(conf).length);
 
 export = configs;

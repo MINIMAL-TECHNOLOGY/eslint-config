@@ -5,16 +5,17 @@ on:
     inputs:
       module:
         type: choice
-        description: Build Mode (common | node | next | react)
+        description: Build Mode (common|node|next|react|react-native)
         options:
           - common
           - node
           - next
           - react
+          - react-native
 
       build_mode:
         type: choice
-        description: Build Mode (patch | minor | major)
+        description: Build Mode (patch|minor|major)
         options:
           - patch
           - minor

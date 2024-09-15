@@ -1,6 +1,6 @@
 {
   "name": "@minimaltech/eslint-common",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "description": "Common ESLint configuration",
   "author": "Minimal Technology <developer@minimaltek.com>",
   "license": "MIT",

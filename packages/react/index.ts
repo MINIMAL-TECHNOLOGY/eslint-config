@@ -36,12 +36,17 @@ const configs = [
       "no-shadow": "off",
       "no-undef": "off",
 
+      // React
+      "react/no-unescaped-entities": "off",
       "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-boolean-value": "error",
+
+      // React Hooks
       "react-hooks/rules-of-hooks": "warn",
       "react-hooks/exhaustive-deps": "error",
-      "react/jsx-boolean-value": "error",
-      "react/react-in-jsx-scope": "off",
 
+      // TS
       "@typescript-eslint/ban-types": "off",
     },
   },

@@ -55,30 +55,28 @@ const configs: ReturnType<typeof tsEslint.config> = [
           format: ["PascalCase"],
           custom: {
             regex:
-              "^(T|Type|Any|Promise|Number|String|Object|Value)[A-Z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*(Type|Promise|Number|String|Object|Value|Like)$",
+              "^(T|Type|Any|Promise|Number|String|Object|Value)[A-Z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*(Type|Promise|Number|String|Object|Value|Like|Prop|Props)$",
             match: true,
           },
           filter: {
-            regex: `^(${VALID_NAMING_TYPES})[A-Z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*(${VALID_NAMING_TYPES})$`,
+            regex: `^(${VALID_NAMING_TYPES})$`,
             match: false,
           },
         },
         {
           selector: "default",
           format: ["camelCase", "PascalCase"],
-          leadingUnderscore: "allow",
-          trailingUnderscore: "allow",
+          leadingUnderscore: "allowSingleOrDouble",
         },
         {
           selector: "memberLike",
           format: ["camelCase", "PascalCase", "UPPER_CASE"],
-          leadingUnderscore: "allow",
+          leadingUnderscore: "allowSingleOrDouble",
         },
         {
           selector: "variableLike",
           format: ["camelCase", "PascalCase", "UPPER_CASE"],
-          leadingUnderscore: "allow",
-          trailingUnderscore: "allow",
+          leadingUnderscore: "allowSingleOrDouble",
         },
         {
           selector: "variable",
@@ -173,6 +171,8 @@ const configs: ReturnType<typeof tsEslint.config> = [
       "**/build/",
       "**/dist/",
       "**/release/",
+      "**/babel.config.*",
+      "**/.babelrc.*",
       "**/eslint.config.*",
       "**/.eslintrc.*",
       "**/.prettierrc.*",

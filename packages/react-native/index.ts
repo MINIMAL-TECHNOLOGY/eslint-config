@@ -1,18 +1,12 @@
-import reactPlugin from '@minimaltech/eslint-react';
+import reactConfs from '@minimaltech/eslint-react';
 import tsEslint from "typescript-eslint";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 
-const normalizeExpoConfigs = () => {
-  const compat = new FlatCompat({
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all,
-  });
-
+const normalizeReactConfs = () => {
   const rs: ReturnType<typeof tsEslint.config>= []
-  const expoConfs = compat.extends("eslint-config-expo");
-  for (const conf of expoConfs) {
+  for (const conf of reactConfs) {
     if (!conf?.plugins?.['@typescript-eslint']) {
       rs.push(conf);
       continue;
@@ -29,10 +23,16 @@ const normalizeExpoConfigs = () => {
   return rs;
 }
 
+const compat = new FlatCompat({
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
+});
+const expoConfs = compat.extends("eslint-config-expo");
+
 // ------------------------------------------------------------
 const configs = [
-  ...normalizeExpoConfigs(),
-  ...reactPlugin,
+  ...expoConfs,
+  ...normalizeReactConfs(),
   {
     rules: {
       '@typescript-eslint/no-require-imports': 'off',

@@ -12,13 +12,14 @@
     "version": "pnpm version --no-git-tag-version"
   },
   "dependencies": {
-    "@eslint/js": "^9.32.0",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
     "@minimaltech/eslint-react": "latest",
-    "eslint-config-expo": "^10.0.0",
-    "typescript-eslint": "^8.44.0"
+    "eslint-config-expo": "^55.0.0",
+    "typescript-eslint": "^8.58.0"
   },
   "devDependencies": {
-    "@types/node": "^22.14.1",
+    "@types/node": "^25.5.0",
     "tsconfigs": "^5.0.0"
   },
   "publishConfig": {

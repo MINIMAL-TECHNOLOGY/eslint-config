@@ -5,13 +5,21 @@
   "author": "Minimal Technology <developer@minimaltek.com>",
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=10"
+    "node": ">=18"
+  },
+  "trustedDependencies": [
+    "unrs-resolver"
+  ],
+  "overrides": {
+    "typescript": "^6.0.3"
   },
   "scripts": {
-    "deps-clean": "rm -rf ./pnpm-lock.yaml ./node_modules ./packages*/node_modules ./packages/*/dist",
-    "compile": "rm -rf packages/*/dist && pnpm -r run compile",
+    "deps-clean": "rm -rf ./bun.lock ./node_modules ./packages/*/node_modules ./packages/*/dist",
+    "compile": "rm -rf packages/*/dist && bun run --filter '*' compile",
     "release:common": "sh ./scripts/release.sh common",
     "release:node": "sh ./scripts/release.sh node",
     "release:next": "sh ./scripts/release.sh next",

@@ -1,13 +1,9 @@
 {
-  "extends": "tsconfigs/nodejs-module",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noImplicitAny": false
+    "outDir": "dist"
   },
   "include": [
-    "./index.ts",
-    "plugins.d.ts"
+    "./index.ts"
   ]
 }

@@ -1,47 +1,61 @@
-# Minimal Technology eslint configuration
+# Minimal Technology — ESLint configurations
 
-This repository contains the shared ESLint configuration used by the Minimal Technology team. It provides a standardized set of linting rules for your JavaScript and TypeScript projects, helping to ensure code quality and consistency across your projects.
+Shared ESLint (flat config) presets used by the Minimal Technology team. One install gives you a consistent, strict, TypeScript-first linting setup across all projects.
+
+## Packages
+
+| Package | Use for | Built on |
+| --- | --- | --- |
+| [`@minimaltech/eslint-common`](packages/common) | Any JS/TS project | `eslint`, `typescript-eslint`, `prettier` |
+| [`@minimaltech/eslint-node`](packages/node) | Node.js / LoopBack services | common + `eslint-plugin-n` + LoopBack strict rules |
+| [`@minimaltech/eslint-react`](packages/react) | React apps (Vite, CRA, …) | common + `react`, `react-hooks`, `react-refresh` |
+| [`@minimaltech/eslint-next`](packages/next) | Next.js apps | react + `@next/eslint-plugin-next` |
+| [`@minimaltech/eslint-react-native`](packages/react-native) | React Native / Expo apps | react + `eslint-config-expo` |
+
+## Requirements
+
+- Node.js >= 18
+- ESLint >= 10 (installed in your project)
+- Bun (or any package manager — examples below use Bun)
 
 ## Installation
 
-First of all, ensure that Node.js and pnpm are installed in your system. Then, run the following command to install the package:
-
 ```bash
-pnpm add -D @minimaltech/eslint-{node|next|react|react-native}
-```
-
-This command installs this package as a devDependency in your project.
-
-### Setup
-
-This eslint configuration expects some `peerDependencies` or `devDependencies` to be installed in your project. Please ensure that you have them installed as devDependency.
-You can install them using the following command:
-
-```bash
-pnpm add -D eslint@^8.57.0 prettier typescript
+# pick the package that matches your project type
+bun add -d @minimaltech/eslint-node
+bun add -d eslint prettier typescript
 ```
 
 ## Usage
 
-Create a `eslint.config.*` file in your project's root (or update the existing one) with the following content:
+Create `eslint.config.mjs` in your project root:
 
-```ts
-// Import the configs that required for your project,
-// Choose one of [eslint-node, eslint-react, eslint-next | eslint-react-native] to import
-import confs from "@minimaltech/eslint-{node|next|react|react-native}";
+```js
+import configs from "@minimaltech/eslint-node";
 
-const configs = [
-  ...confs,
+export default [
+  ...configs,
   {
-    // extra configs
+    // project-specific overrides
   },
 ];
-
-export default configs;
 ```
 
-Lint command:
+Lint:
 
 ```bash
 eslint --report-unused-disable-directives .
 ```
+
+## Development (this repo)
+
+```bash
+bun install          # install workspace dependencies
+bun run compile      # build all packages (topological)
+```
+
+Releases are dispatched per module via `scripts/release.sh` (locally: `bun run release:<module> <patch|minor|major|pre*>`) or the GitHub *Dispatch NPM Release* workflow. Pre-release build modes publish under the `next` dist-tag.
+
+## License
+
+MIT © Minimal Technology

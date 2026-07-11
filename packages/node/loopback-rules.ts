@@ -1,27 +1,26 @@
 import { defineConfig } from "eslint/config";
-import tsEslint from "typescript-eslint";
 
-const lbRules = defineConfig(tsEslint.configs.recommended, {
+// The typescript-eslint base (parser + recommended) is provided by
+// @minimaltech/eslint-common; this layer only adds the LoopBack rule set.
+const loopbackRules = defineConfig({
   rules: {
-    "prefer-const": "error",
-    "no-unused-labels": "error",
     "no-new-wrappers": "error",
     "no-throw-literal": "error",
     "no-unused-expressions": "error",
-    "no-var": "error",
     eqeqeq: ["error", "smart"],
     "no-void": "error",
 
     "no-useless-escape": "warn",
 
     "no-mixed-operators": "off",
-    "no-console": "off",
     "no-inner-declarations": "off",
     "no-dupe-class-members": "off",
     "no-redeclare": "off",
     "no-caller": "error",
     "no-invalid-this": "off",
-    "no-shadow": "error",
+    // core no-shadow false-positives on TS constructs; the
+    // @typescript-eslint/no-shadow extension rule below covers it
+    "no-shadow": "off",
     "no-return-await": "off",
     camelcase: "off",
 
@@ -31,13 +30,11 @@ const lbRules = defineConfig(tsEslint.configs.recommended, {
     // "mocha/no-nested-tests": "error",
     // "no-array-constructor": "error",
 
-    "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/prefer-for-of": "error",
     "@typescript-eslint/unified-signatures": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-invalid-this": ["error"],
-    "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/no-use-before-define": "error",
     "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/no-unused-vars": [
@@ -133,10 +130,19 @@ const lbRules = defineConfig(tsEslint.configs.recommended, {
         format: ["PascalCase"],
       },
 
+      // Names that require quotes ("Content-Type", "GET /users") are exempt
+      // everywhere they can appear, not just in object literals.
       {
-        selector: "objectLiteralProperty",
+        selector: [
+          "objectLiteralProperty",
+          "objectLiteralMethod",
+          "typeProperty",
+          "typeMethod",
+          "classProperty",
+          "classMethod",
+          "enumMember",
+        ],
         format: null,
-        // filter: '^([2-5]{1}[0-9]{2})$|[-/ ]',
         modifiers: ["requiresQuotes"],
       },
 
@@ -156,19 +162,10 @@ const lbRules = defineConfig(tsEslint.configs.recommended, {
     ],
 
     "@typescript-eslint/array-type": "off",
-    "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
-    "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/no-object-literal-type-assertion": "off",
-    "@typescript-eslint/no-parameter-properties": "off",
-    "@typescript-eslint/no-angle-bracket-type-assertion": "off",
-    "@typescript-eslint/prefer-interface": "off",
     "@typescript-eslint/no-namespace": "off",
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-triple-slash-reference": "off",
-    "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-require-imports": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "off",
@@ -176,4 +173,4 @@ const lbRules = defineConfig(tsEslint.configs.recommended, {
   },
 });
 
-export { lbRules };
+export { loopbackRules };

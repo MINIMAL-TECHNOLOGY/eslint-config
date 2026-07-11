@@ -1,9 +1,10 @@
 import reactConfs from "@minimaltech/eslint-react";
+import expoConfs from "eslint-config-expo/flat";
 import tsEslint from "typescript-eslint";
 
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
-
+// expo already registers its own @typescript-eslint plugin instance; drop ours
+// from the react configs so flat config doesn't see two plugin definitions.
+// Copy the config objects instead of mutating the shared module exports.
 const normalizeReactConfs = () => {
   const rs: ReturnType<typeof tsEslint.config> = [];
   for (const conf of reactConfs) {
@@ -12,22 +13,19 @@ const normalizeReactConfs = () => {
       continue;
     }
 
-    delete conf.plugins["@typescript-eslint"];
-    if (!Object.keys(conf.plugins).length) {
-      delete conf.plugins;
+    const { "@typescript-eslint": _tsPlugin, ...restPlugins } = conf.plugins;
+    const copy = { ...conf };
+    if (Object.keys(restPlugins).length) {
+      copy.plugins = restPlugins;
+    } else {
+      delete copy.plugins;
     }
 
-    rs.push(conf);
+    rs.push(copy);
   }
 
   return rs;
 };
-
-const compat = new FlatCompat({
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
-const expoConfs = compat.extends("eslint-config-expo");
 
 // ------------------------------------------------------------
 const configs = [
@@ -46,6 +44,6 @@ const configs = [
   {
     ignores: ["scripts/**/*", "assets/**/*"],
   },
-].filter((conf) => Object.keys(conf).length);
+];
 
 export = configs;

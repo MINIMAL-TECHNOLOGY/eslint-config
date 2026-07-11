@@ -1,18 +1,12 @@
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
 import commonPlugin from "@minimaltech/eslint-common";
-// import tsEslint from "typescript-eslint";
-
+import reactPlugin from "eslint-plugin-react";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
 
-const compat = new FlatCompat({
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
-
 const configs = [
-  ...compat.extends("plugin:eslint-plugin-react/recommended"),
-  ...compat.extends("plugin:eslint-plugin-react-hooks/recommended"),
+  // Both plugins ship flat configs natively — no FlatCompat needed
+  reactPlugin.configs.flat.recommended,
+  reactHooksPlugin.configs.flat.recommended,
   ...commonPlugin,
   {
     plugins: {
@@ -20,7 +14,7 @@ const configs = [
     },
     rules: {
       "react-refresh/only-export-components": [
-        "off",
+        "warn",
         { allowConstantExport: true },
       ],
     },
@@ -28,12 +22,13 @@ const configs = [
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
     settings: {
-      react: { version: "detect" },
+      // "detect" crashes on ESLint 10 (eslint-plugin-react 7.37 still calls
+      // the removed context.getFilename()). Pin the current React major;
+      // consumers on other versions can override settings.react.version.
+      react: { version: "19" },
     },
     rules: {
-      "no-debugger": "off",
-      "no-shadow": "off",
-      "no-undef": "off",
+      "no-debugger": "warn",
 
       // React
       "react/no-unescaped-entities": "off",
@@ -41,17 +36,15 @@ const configs = [
       "react/react-in-jsx-scope": "off",
       "react/jsx-boolean-value": "error",
 
-      // React Hooks
-      "react-hooks/rules-of-hooks": "warn",
-      "react-hooks/exhaustive-deps": "error",
-
-      // TS
-      "@typescript-eslint/ban-types": "off",
+      // React Hooks: rules-of-hooks violations crash React at runtime — keep
+      // it error; exhaustive-deps is a heuristic — warn (plugin defaults)
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
     },
   },
   {
     ignores: ["**/vite.config.*"],
   },
-].filter((conf) => Object.keys(conf).length);
+];
 
 export = configs;

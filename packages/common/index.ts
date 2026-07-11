@@ -14,8 +14,9 @@ const VALID_NAMING_TYPES = [
 
 const configs = defineConfig([
   eslint.configs.recommended,
-  prettierRecommended,
   tsEslint.configs.recommended,
+  // prettier last so it can disable any conflicting stylistic rules
+  prettierRecommended,
   {
     files: [
       "**/*.js",
@@ -29,7 +30,12 @@ const configs = defineConfig([
     ],
     languageOptions: {
       parserOptions: {
-        project: "./tsconfig.json",
+        // projectService discovers the consumer's tsconfig automatically;
+        // allowDefaultProject covers root-level scripts/config files that
+        // live outside it (jest.config.js, prettier.config.mjs, …)
+        projectService: {
+          allowDefaultProject: ["*.js", "*.cjs", "*.mjs", ".*.js"],
+        },
       },
     },
     rules: {
@@ -80,58 +86,106 @@ const configs = defineConfig([
           format: ["camelCase", "PascalCase", "UPPER_CASE"],
           leadingUnderscore: "allowSingleOrDouble",
         },
+        // Destructured names come from external APIs and can't be renamed
+        // freely — exempt them. The boolean entry repeats `types` because the
+        // rule ranks type-bearing configs above modifier-only ones.
+        {
+          selector: "variable",
+          modifiers: ["destructured"],
+          types: ["boolean"],
+          format: null,
+        },
+        {
+          selector: "variable",
+          modifiers: ["destructured"],
+          format: null,
+        },
+        // SCREAMING_CASE boolean constants (IS_PROD, DEBUG) are idiomatic —
+        // let them through before the prefix requirement below.
+        {
+          selector: "variable",
+          types: ["boolean"],
+          format: ["UPPER_CASE"],
+          filter: { regex: "^[A-Z][A-Z0-9_]*$", match: true },
+        },
         {
           selector: "variable",
           types: ["boolean"],
           format: ["PascalCase"],
+          // NOTE: keep longest-first within any shared stem (does>do,
+          // require>re, needs>need, …) — the rule trims the FIRST prefix
+          // that matches and then format-checks the remainder.
           prefix: [
-            "b",
-            "do",
-            "is",
-            "has",
-            "use",
-            "can",
-            "did",
-            "auto",
-            "will",
-            "with",
-            "force",
-            "should",
-            "error",
-            "success",
-            "require",
-            "re",
-            "rs",
-            "enabled",
-            "enable",
-            "disabled",
-            "disable",
-            "activated",
-            "activate",
             "deactivated",
             "deactivate",
+            "activated",
+            "activate",
+            "disabled",
+            "disable",
+            "enabled",
+            "enable",
+            "require",
+            "success",
+            "should",
             "ignore",
+            "allow",
+            "could",
+            "error",
+            "force",
+            "needs",
+            "auto",
+            "does",
+            "hide",
+            "must",
+            "need",
+            "show",
+            "were",
+            "will",
+            "with",
+            "are",
+            "can",
+            "did",
+            "had",
+            "has",
+            "use",
+            "was",
+            "do",
+            "is",
+            "re",
+            "rs",
+            "b",
           ],
         },
+        // Names that require quotes ("Content-Type", "X-Custom", "GET /users")
+        // are exempt everywhere they can appear, not just in object literals.
         {
-          selector: "property",
-          format: ["PascalCase"],
-          filter: { regex: "[-]", match: true },
-        },
-        {
-          selector: ["objectLiteralProperty", "objectLiteralMethod"],
+          selector: [
+            "objectLiteralProperty",
+            "objectLiteralMethod",
+            "typeProperty",
+            "typeMethod",
+            "classProperty",
+            "classMethod",
+            "enumMember",
+          ],
           format: null,
           modifiers: ["requiresQuotes"],
+        },
+        // API payloads commonly use snake_case keys — allow them in object
+        // literals only (interfaces/classes keep the stricter formats).
+        {
+          selector: "objectLiteralProperty",
+          format: ["camelCase", "PascalCase", "UPPER_CASE", "snake_case"],
         },
       ],
 
       // OFF
-      "prefer-promise-reject-errors": "off",
+      // NOTE: typescript-eslint only disables these for TS files — keep the
+      // explicit offs so plain .js files get the same treatment
       "no-constant-condition": "off",
       "no-undef": "off",
       "no-unused-vars": "off",
 
-      "@typescript-eslint/no-constant-condition": "off",
       "@typescript-eslint/no-unsafe-function-type": "off",
       "@typescript-eslint/no-invalid-this": "off",
       "@typescript-eslint/no-this-alias": "off",
@@ -146,6 +200,10 @@ const configs = defineConfig([
       "@typescript-eslint/explicit-function-return-type": "off",
 
       // ERROR
+      // typescript-eslint enables these for TS files only — set them here so
+      // plain .js files are held to the same standard
+      "prefer-const": "error",
+      "no-var": "error",
       curly: ["error", "all"],
       "no-restricted-imports": [
         "error",
@@ -157,13 +215,6 @@ const configs = defineConfig([
                 "Please import 'fn' from 'lodash/fn' instead of * from lodash | Ex: import get from 'lodash/get'",
             },
           ],
-        },
-      ],
-      "prefer-const": [
-        "error",
-        {
-          destructuring: "any",
-          ignoreReadBeforeAssign: false,
         },
       ],
     },

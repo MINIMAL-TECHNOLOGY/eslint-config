@@ -1,39 +1,48 @@
-# Minimal Technology eslint configuration
+# @minimaltech/eslint-node
 
-This repository contains the shared ESLint configuration used by the Minimal Technology team. It provides a standardized set of linting rules for your JavaScript and TypeScript projects, helping to ensure code quality and consistency across your projects.
+ESLint (flat config) preset for Minimal Technology Node.js services — [`@minimaltech/eslint-common`](https://www.npmjs.com/package/@minimaltech/eslint-common) plus the LoopBack-derived strict rule set.
+
+## What's inside
+
+- Everything from `@minimaltech/eslint-common`
+- LoopBack strict rules (override the common defaults):
+  - type-aware safety at **error**: `no-floating-promises`, `await-thenable`, `no-misused-promises` control, `prefer-nullish-coalescing`, `prefer-optional-chain`, `return-await`
+  - `no-explicit-any`, `no-shadow`, `no-use-before-define` at **error**
+  - LoopBack naming conventions (strict `camelCase` default, `PascalCase` types, `Mixin$` factory functions, …)
+- `eslint-plugin-n` with `n/prefer-node-protocol` enforced
 
 ## Installation
 
-First of all, ensure that Node.js and pnpm are installed in your system. Then, run the following command to install the package:
-
-```
-pnpm add -D @minimaltech/eslint-node
-```
-
-This command installs this package as a devDependency in your project.
-
-### Setup
-
-This eslint configuration expects some `peerDependencies` or `devDependencies` to be installed in your project. Please ensure that you have them installed as devDependency.
-You can install them using the following command:
-
 ```bash
-pnpm add -D eslint@^8.57.0 prettier typescript
+bun add -d @minimaltech/eslint-node
+bun add -d eslint prettier typescript
 ```
 
 ## Usage
 
-Create a `eslint.config.*` file in your project's root (or update the existing one) with the following content:
+Create `eslint.config.mjs`:
 
-```ts
-import confs from "@minimaltech/eslint-node";
+```js
+import configs from "@minimaltech/eslint-node";
 
-const configs = [
-  ...confs,
+export default [
+  ...configs,
   {
-    // extra configs
+    // project-specific overrides
   },
 ];
-
-export default configs;
 ```
+
+Lint:
+
+```bash
+eslint --report-unused-disable-directives .
+```
+
+## Requirements
+
+Node.js >= 18, ESLint >= 10.
+
+## License
+
+MIT © Minimal Technology

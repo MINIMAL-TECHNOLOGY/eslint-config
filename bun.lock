@@ -41,7 +41,7 @@
     },
     "packages/node": {
       "name": "@minimaltech/eslint-node",
-      "version": "0.2.2",
+      "version": "0.3.0",
       "dependencies": {
         "@minimaltech/eslint-common": "workspace:^",
         "@typescript-eslint/eslint-plugin": "^8.63.0",

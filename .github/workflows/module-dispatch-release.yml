@@ -48,13 +48,6 @@ jobs:
           git config user.name "mt-ci gh-action"
           git config user.email "mt-ci@gh-action.none"
 
-      - name: Setup npm registry auth
-        # bun publish reads ~/.npmrc directly (it does not support
-        # setup-node's NPM_CONFIG_USERCONFIG / NODE_AUTH_TOKEN mechanism)
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-
       - name: Verify Module + Build mode
         run: |
           echo "mt-ci | Module: $MODULE | Build mode: $BUILD_MODE"
@@ -64,3 +57,7 @@ jobs:
 
       - name: Release 📦
         run: sh ./scripts/release.sh $MODULE $BUILD_MODE
+        env:
+          # bun publish ignores .npmrc auth tokens (verified on 1.3.14);
+          # NPM_CONFIG_TOKEN is the mechanism it honors (sent as Bearer)
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

@@ -25,7 +25,7 @@
     },
     "packages/next": {
       "name": "@minimaltech/eslint-next",
-      "version": "0.1.17",
+      "version": "0.2.0",
       "dependencies": {
         "@minimaltech/eslint-react": "workspace:^",
         "@next/eslint-plugin-next": "^16.2.10",
